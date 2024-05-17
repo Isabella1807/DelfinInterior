@@ -1,3 +1,5 @@
+@import './globalVariables.scss';
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +11,7 @@ html, body{
 }
 
 body{
-  background-color: green;
+  background-color: #F3F3F3;
 }
 
 .globalContentWidth{

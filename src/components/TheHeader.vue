@@ -47,7 +47,6 @@ header {
 .headerItemsContainer {
   display: flex;
   width: 100%;
-  background-color: aqua;
   justify-content: space-between;
 }
 
@@ -66,7 +65,7 @@ nav {
 .navIcons {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 4rem;
 
   img{
     height: 1.8rem;

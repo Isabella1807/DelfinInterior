@@ -8,8 +8,9 @@ const props = defineProps({to: String, title: String});
   </p>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 p{
-  margin: 0 10px;
+  margin: 0 4rem;
+  font-size: $navFont;
 }
 </style>
