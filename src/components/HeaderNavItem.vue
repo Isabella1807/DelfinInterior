@@ -10,7 +10,11 @@ const props = defineProps({to: String, title: String});
 
 <style scoped lang="scss">
 p{
-  margin: 0 4rem;
-  font-size: $navFont;
+  margin-right: 3.7rem;
+  font-size: $FontSize20;
+  color: $fontColorWhite;
+  :hover{
+    cursor: pointer;
+  }
 }
 </style>

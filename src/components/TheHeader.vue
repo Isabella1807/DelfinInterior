@@ -42,6 +42,9 @@ header {
   img {
     height: 5rem;
   }
+  :hover{
+    cursor: pointer;
+  }
 }
 
 .headerItemsContainer {
@@ -51,7 +54,6 @@ header {
 }
 
 nav {
-  background-color: purple;
   display: flex;
   justify-content: center;
 }
@@ -59,13 +61,12 @@ nav {
 .navLinks {
   display: flex;
   align-items: center;
-  background-color: tan;
 }
 
 .navIcons {
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: 3.7rem;
 
   img{
     height: 1.8rem;

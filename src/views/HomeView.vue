@@ -6,12 +6,14 @@
     <img src="../assets/images/homeImage.jpg" alt="">
   </div>
   <div class="globalContentWidth">
-    <h1>HOME</h1>
+    <div class="test">
+      <h1>HOME</h1>
+    </div>
   </div>
 </template>
 
 <style scoped>
-.globalContentWidth{
+.test{
   width: 100%;
   background-color: deeppink;
 }
