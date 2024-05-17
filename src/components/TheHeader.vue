@@ -3,8 +3,8 @@ import HeaderNavItem from "@/components/HeaderNavItem.vue";
 </script>
 
 <template>
-  <header class="globalContentWidth">
-    <div class="headerItemsContainer">
+  <header>
+    <div class="headerItemsContainer globalContentWidth">
       <div>
         <router-link to="/" class="headerLogo">
           <img src="../assets/Logo.png" alt="Delfin Interior Logo">
@@ -34,7 +34,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 999;
-  background-color: darkgray;
+  background-color: #738272;
   align-items: center;
 }
 

@@ -2,8 +2,8 @@
 </script>
 
 <template>
-  <div>
-    <img src="" alt="">
+  <div class="homeFrontImageContainer">
+    <img src="../assets/images/homeImage.jpg" alt="">
   </div>
   <div class="globalContentWidth">
     <h1>HOME</h1>
@@ -14,5 +14,12 @@
 .globalContentWidth{
   width: 100%;
   background-color: deeppink;
+}
+.homeFrontImageContainer{
+  img{
+    object-fit: cover;
+    width: 100%;
+    height: 80vh;
+  }
 }
 </style>
