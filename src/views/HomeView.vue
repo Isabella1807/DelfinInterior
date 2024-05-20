@@ -10,9 +10,9 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
     <img src="../assets/images/homeImage.jpg" alt="">
   </div>
   <div class="globalContentWidth">
-    <HomeFurnitureCard :bgImgPath="diningchairPath" cardTitle="Spisestole"></HomeFurnitureCard>
-    <HomeFurnitureCard :bgImgPath="tablePath" cardTitle="Borde"></HomeFurnitureCard>
-    <HomeFurnitureCard :bgImgPath="armchairPath" cardTitle="Lænestole"></HomeFurnitureCard>
+    <HomeFurnitureCard to="/shop" :bgImgPath="diningchairPath" cardTitle="Spisestole"></HomeFurnitureCard>
+    <HomeFurnitureCard to="/shop" :bgImgPath="tablePath" cardTitle="Borde"></HomeFurnitureCard>
+    <HomeFurnitureCard to="/shop" :bgImgPath="armchairPath" cardTitle="Lænestole"></HomeFurnitureCard>
   </div>
 </template>
 

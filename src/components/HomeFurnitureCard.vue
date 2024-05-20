@@ -3,15 +3,18 @@
 const props = defineProps({
   bgImgPath: String,
   cardTitle: String,
+  to: String,
 });
 
 </script>
 
 <template>
-  <div class="furnitureCardContainer">
-    <img :src="bgImgPath" alt="spisestol">
-    <h1 class="cardTitle">{{ cardTitle }}</h1>
-  </div>
+  <router-link :to="props.to">
+    <div class="furnitureCardContainer">
+      <img :src="bgImgPath" alt="spisestol">
+      <h1 class="cardTitle">{{ cardTitle }}</h1>
+    </div>
+  </router-link>
 </template>
 
 <style scoped lang="scss">
