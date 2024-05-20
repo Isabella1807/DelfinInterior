@@ -3,11 +3,13 @@ const props = defineProps({to: String, title: String});
 </script>
 
 <template>
-  <div class="burgerNavClickArea">
-  <p>
-    <router-link :to="props.to">{{ props.title }}</router-link>
-  </p>
-  </div>
+  <router-link :to="props.to">
+    <div class="burgerNavClickArea">
+      <p>
+        {{ props.title }}
+      </p>
+    </div>
+  </router-link>
 </template>
 
 <style scoped lang="scss">
@@ -20,7 +22,7 @@ const props = defineProps({to: String, title: String});
   margin-bottom: 0.6rem;
   padding: 0.6rem;
 
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 
@@ -28,10 +30,11 @@ const props = defineProps({to: String, title: String});
     background-color: inherit;
   }
 
-  p{
+  p {
     font-size: $FontSize20;
     color: $fontColorWhite;
-    :hover{
+
+    :hover {
       cursor: pointer;
     }
   }

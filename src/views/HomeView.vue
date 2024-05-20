@@ -1,4 +1,8 @@
 <script setup>
+import HomeFurnitureCard from "@/components/HomeFurnitureCard.vue";
+import diningchairPath from "@/assets/images/spisestol.jpg"
+import tablePath from "@/assets/images/bord.jpg";
+import armchairPath from "@/assets/images/lænestole2.jpg";
 </script>
 
 <template>
@@ -6,9 +10,9 @@
     <img src="../assets/images/homeImage.jpg" alt="">
   </div>
   <div class="globalContentWidth">
-    <div class="test">
-      <h1>HOME</h1>
-    </div>
+    <HomeFurnitureCard :bgImgPath="diningchairPath" cardTitle="Spisestole"></HomeFurnitureCard>
+    <HomeFurnitureCard :bgImgPath="tablePath" cardTitle="Borde"></HomeFurnitureCard>
+    <HomeFurnitureCard :bgImgPath="armchairPath" cardTitle="Lænestole"></HomeFurnitureCard>
   </div>
 </template>
 
@@ -22,10 +26,15 @@
   }
 }
 .homeFrontImageContainer{
+
   img{
     object-fit: cover;
     width: 100%;
-    height: 80vh;
+    height: 60vh;
+
+    @include md {
+      height: 80vh;
+    }
   }
 }
 </style>

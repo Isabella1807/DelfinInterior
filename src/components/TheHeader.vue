@@ -39,10 +39,10 @@ const toggleBurgerMenu = () => {
     <nav v-show="isBurgerMenuVisible">
       <div class="burgerNavLinks">
         <div class="burgerNavClickContainer globalContentWidth">
-          <HeaderNavItem to="/shop" title="Produkter"/>
-          <HeaderNavItem to="/sell" title="Sælg til os"/>
-          <HeaderNavItem to="/about" title="Om os"/>
-          <HeaderNavItem to="/contact" title="Kontakt"/>
+          <HeaderNavItem to="/shop" title="Produkter" @click="toggleBurgerMenu"/>
+          <HeaderNavItem to="/sell" title="Sælg til os" @click="toggleBurgerMenu"/>
+          <HeaderNavItem to="/about" title="Om os" @click="toggleBurgerMenu"/>
+          <HeaderNavItem to="/contact" title="Kontakt" @click="toggleBurgerMenu"/>
         </div>
       </div>
     </nav>
