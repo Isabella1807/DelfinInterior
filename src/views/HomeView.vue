@@ -12,10 +12,14 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .test{
   width: 100%;
   background-color: deeppink;
+
+  @include md{
+    background-color: blue;
+  }
 }
 .homeFrontImageContainer{
   img{
