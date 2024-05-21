@@ -36,6 +36,11 @@ const props = defineProps({
     left: 0;
   }
 
+  h1 {
+    font-size: $FontSize30;
+    color: $fontColorWhite;
+  }
+
   .cardTitle {
     position: absolute;
     top: 50%;

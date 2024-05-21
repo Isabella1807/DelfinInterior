@@ -1,14 +1,22 @@
 
-$FontSize20: 1.4rem;
-$headlineFont: 1.8rem;
-$bigBannerFont: 1.5rem;
+$FontSize20: 1.2rem;
+$FontSize30: 1.8rem;
+$bigHeadlineFont: 5.6rem;
+$smallHeadlineFont: 2.8rem;
 $fontColorWhite: #F9F9F9;
 $fontColorBlack: #707070;
 
 $screen-lg-min: 950px;
+$screen-xl-min: 1100px;
 
 @mixin md {
   @media screen and (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (min-width: #{$screen-xl-min}) {
     @content;
   }
 }
