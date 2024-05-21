@@ -7,16 +7,9 @@ $fontColorWhite: #F9F9F9;
 $fontColorBlack: #707070;
 
 $screen-lg-min: 950px;
-$screen-xl-min: 1100px;
 
 @mixin md {
   @media screen and (min-width: #{$screen-lg-min}) {
-    @content;
-  }
-}
-
-@mixin lg {
-  @media screen and (min-width: #{$screen-xl-min}) {
     @content;
   }
 }

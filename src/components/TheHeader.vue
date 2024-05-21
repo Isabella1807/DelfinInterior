@@ -59,6 +59,9 @@ header {
   z-index: 999;
   background-color: #738272;
   align-items: center;
+  box-shadow: 1px 4px 9px 0px rgba(0,0,0,0.31);
+  -webkit-box-shadow: 1px 4px 9px 0px rgba(0,0,0,0.31);
+  -moz-box-shadow: 1px 4px 9px 0px rgba(0,0,0,0.31);
 
   .headerItemsContainer {
     display: flex;

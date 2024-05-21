@@ -1,5 +1,4 @@
 <script setup>
-
 const props = defineProps({
   bgImgPath: String,
   cardTitle: String,
@@ -63,14 +62,5 @@ const props = defineProps({
     margin: 4rem auto;
     width: 75%;
   }
-
-  /*@include md {
-    .furnitureCardContainer {
-      border: 4px solid green;
-      width: 61rem;
-      height: 31rem;
-      background-color: orange;
-    }
-  }*/
 }
 </style>
