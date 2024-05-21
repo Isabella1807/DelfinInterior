@@ -9,6 +9,11 @@ import homeImage from "@/assets/images/homeImage.jpg";
       <Banner :bannerImg="homeImage" shopCategory="Alle produkter"/>
       <div class="shopContentContainer">
         <p>Min shop whoop</p>
+        <router-link to="/product">
+          <button type="button">
+            Min super seje stol omg
+          </button>
+        </router-link>
       </div>
     </div>
   </div>
@@ -19,7 +24,7 @@ import homeImage from "@/assets/images/homeImage.jpg";
   width: 100%;
 }
 
-.shopContentContainer{
+.shopContentContainer {
   background-color: deeppink;
 }
 </style>
