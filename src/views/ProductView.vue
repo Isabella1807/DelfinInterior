@@ -9,12 +9,12 @@ import ProductAddToBasket from "@/components/productComponents/ProductAddToBaske
 <template>
   <div class="globalContentWidth">
     <div class="productContainer">
-      <ProductGallery class="ProductGallery"></ProductGallery>
+      <ProductGallery class="ProductGallery"/>
       <div class="informationContainer">
-        <ProductTitle class="ProductTitle"></ProductTitle>
-        <ProductDescription class="ProductDescription"></ProductDescription>
-        <ProductIcons class="ProductIcons"></ProductIcons>
-        <ProductAddToBasket class="ProductAddToBasket"></ProductAddToBasket>
+        <ProductTitle class="ProductTitle"/>
+        <ProductDescription class="ProductDescription"/>
+        <ProductIcons class="ProductIcons"/>
+        <ProductAddToBasket class="ProductAddToBasket"/>
       </div>
     </div>
   </div>
