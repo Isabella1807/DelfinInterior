@@ -68,7 +68,7 @@ footer {
 
   .footerContainer {
     display: grid;
-    font-size: $FontSize20;
+    font-size: $fontSize20;
     color: $fontColorWhite;
     justify-content: center;
     grid-template-areas:
@@ -103,7 +103,7 @@ footer {
   @include md {
     .footerContainer {
       display: grid;
-      font-size: $FontSize20;
+      font-size: $fontSize20;
       color: $fontColorWhite;
       grid-template-columns: repeat(4, 1fr);
       grid-template-areas:

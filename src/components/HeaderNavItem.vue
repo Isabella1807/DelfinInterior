@@ -31,7 +31,7 @@ const props = defineProps({to: String, title: String});
   }
 
   p {
-    font-size: $FontSize20;
+    font-size: $fontSize20;
     color: $fontColorWhite;
 
     :hover {

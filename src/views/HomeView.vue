@@ -66,7 +66,7 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
       }
 
       h2 {
-        font-size: $FontSize20;
+        font-size: $fontSize20;
         color: $fontColorWhite;
       }
 
@@ -111,7 +111,7 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
         }
 
         h2 {
-          font-size: $FontSize30;
+          font-size: $fontSize30;
         }
 
         .linkBannerText {

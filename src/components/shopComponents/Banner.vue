@@ -33,7 +33,7 @@ const props = defineProps({
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: $FontSize30;
+    font-size: $fontSize30;
     color: $fontColorWhite;
   }
 }

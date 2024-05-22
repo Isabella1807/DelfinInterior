@@ -1,13 +1,19 @@
+//Font sizes
+$fontSize20: 1.2rem;
+$fontSize24: 1.5rem;
+$fontSize30: 1.8rem;
 
-$FontSize20: 1.2rem;
-$FontSize30: 1.8rem;
 $bigHeadlineFont: 5.6rem;
 $smallHeadlineFont: 2.8rem;
+
+//Font colors
 $fontColorWhite: #F9F9F9;
 $fontColorBlack: #707070;
 
+//Media Breakpoints
 $screen-lg-min: 950px;
 
+//Media queries
 @mixin md {
   @media screen and (min-width: #{$screen-lg-min}) {
     @content;

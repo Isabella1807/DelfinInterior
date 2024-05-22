@@ -36,7 +36,7 @@ const props = defineProps({
   }
 
   h1 {
-    font-size: $FontSize30;
+    font-size: $fontSize30;
     color: $fontColorWhite;
   }
 
