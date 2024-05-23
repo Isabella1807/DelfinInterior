@@ -185,7 +185,8 @@ const state = () => ({
             weight_kilo: 5,
         },
 
-    ]
+    ],
+    selectedCategory: ''
 })
 
 const getters = {
@@ -202,18 +203,29 @@ const getters = {
         })
         return sortedCategories
     },
+    getAllProductsInCategory: (state) => {
+        return []
+    },
+    getSelectedCategory: (state) => {
+        return state.selectedCategory ? state.selectedCategory : "Alle produkter"
+    }
 }
 
-const
-actions = {
-    incrementCounter({state, commit, dispatch}) {
+const actions = {
+    incrementCounter({state, commit}) {
         commit('setCounter', state.count + 1)
-    }
+    },
+    setCategory({state, commit}, category) {
+        commit('overwriteCategory', category)
+    },
 }
 
 const mutations = {
     setCounter(state, newValue) {
         state.count = newValue;
+    },
+    overwriteCategory(state, newCategory){
+        state.selectedCategory = newCategory
     }
 }
 

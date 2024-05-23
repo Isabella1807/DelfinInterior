@@ -5,6 +5,11 @@ import {computed} from 'vue';
 const store = useStore();
 
 const categories = computed(() => store.getters["products/getAllCategories"])
+
+
+const selectCategory = (category) => {
+  store.dispatch('products/setCategory', category);
+}
 </script>
 
 <template>
@@ -13,7 +18,7 @@ const categories = computed(() => store.getters["products/getAllCategories"])
       <p>Kategorier</p>
     </div>
     <div>
-      <p v-for="category in categories"> {{ category }} </p>
+      <p v-for="category in categories" @click="selectCategory(category)"> {{ category }} </p>
     </div>
   </div>
 </template>
