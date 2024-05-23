@@ -1,6 +1,19 @@
 <script setup>
+import {useStore} from 'vuex';
+import {computed} from 'vue';
+
+const store = useStore();
+
+const categories = computed(() => store.getters["products/getAllCategories"])
+
 const props = defineProps({
   imgPath: String,
+  price: Number,
+  title: String,
+})
+
+const formattedPrice = computed(() => {
+  return `${props.price} DKK`
 })
 </script>
 
@@ -13,9 +26,9 @@ const props = defineProps({
     </router-link>
 
     <div class="productTextContainer">
-      <p>Fritz Hansen cirkulær Cafébord sort Laminat</p>
+      <p>{{ props.title }}</p>
       <div class="lowerTextContainerItems">
-        <p>30.000 DKK</p>
+        <p>{{ formattedPrice }}</p>
         <router-link to="/product">
           <div class="productReadMore">
             <p>Læs mere</p>

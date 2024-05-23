@@ -1,12 +1,19 @@
 <script setup>
 import HeaderNavItem from "@/components/HeaderNavItem.vue";
 import {ref} from "vue";
+import {useStore} from "vuex";
+
+const store = useStore();
 
 let isBurgerMenuVisible = ref(false);
 
 const toggleBurgerMenu = () => {
   isBurgerMenuVisible.value = !isBurgerMenuVisible.value;
 }
+
+const test = () => {
+  store.dispatch('products/incrementCounter')
+};
 </script>
 
 <template>
@@ -26,7 +33,8 @@ const toggleBurgerMenu = () => {
         </div>
         <div class="navIcons">
           <img src="../assets/icons/searchIcon.png" alt="Søg">
-          <img src="../assets/icons/cartIcon.png" alt="Din Kurv">
+          <img src="../assets/icons/cartIcon.png" alt="Din Kurv" @click="test">
+
           <div class="navBurgerIconsContainer">
             <img src="../assets/icons/burgerIcon3.png" alt="Burgermenu" class="burgermenuIcon" @click="toggleBurgerMenu"
                  v-show="!isBurgerMenuVisible">

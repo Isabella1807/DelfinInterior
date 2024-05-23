@@ -1,5 +1,10 @@
 <script setup>
+import {useStore} from 'vuex';
+import {computed} from 'vue';
 
+const store = useStore();
+
+const categories = computed(() => store.getters["products/getAllCategories"])
 </script>
 
 <template>
@@ -7,9 +12,9 @@
     <div class="categoryTitle">
       <p>Kategorier</p>
     </div>
-    <p>Lænestole</p>
-    <p>spisebordsstolffdfdffddfetesttesttesttesttesttesttesttesttesttesttesttest</p>
-    <p>Borde</p>
+    <div>
+      <p v-for="category in categories"> {{ category }} </p>
+    </div>
   </div>
 </template>
 
@@ -31,8 +36,10 @@
 @include md {
   .categoriesContainer {
     display: block;
-    max-width: 12rem;
+    max-width: 14rem;
+    min-width: 12rem;
     overflow: hidden;
+
     .categoryTitle {
     }
   }

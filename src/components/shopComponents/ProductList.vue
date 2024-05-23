@@ -3,16 +3,22 @@ import ProductCard from "@/components/shopComponents/ProductCard.vue";
 import loungechair from "@/assets/images/lænestol3.jpg";
 import stol from "@/assets/images/spisestol.jpg";
 import bord from "@/assets/images/bord.jpg";
+import {useStore} from 'vuex';
+import {computed} from "vue";
+
+const store = useStore();
+
+const products = computed(() => store.getters["products/getAllProducts"])
 </script>
 
 <template>
   <div class="productsContainer">
-    <ProductCard :imgPath="stol"></ProductCard>
-    <ProductCard :imgPath="bord"></ProductCard>
-    <ProductCard :imgPath="loungechair"></ProductCard>
-    <ProductCard :imgPath="stol"></ProductCard>
-    <ProductCard :imgPath="loungechair"></ProductCard>
-    <ProductCard :imgPath="bord"></ProductCard>
+    <ProductCard
+        v-for="product in products"
+        :imgPath="product.images.main"
+        :price="product.price_dkk"
+        :title="product.title"
+    />
   </div>
 </template>
 
