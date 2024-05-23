@@ -1,17 +1,20 @@
 <script setup>
-
+const props = defineProps({
+  mainImage: String,
+  extraImages: [String],
+})
 </script>
 
 <template>
   <div class="productGallery">
     <div class="productFirstImage">
-      <img src="@/assets/images/lænestol3.jpg" alt="">
+      <img :src="props.mainImage" alt="Kæmpe billede af produkt">
     </div>
     <div class="galleryOptions">
-      <div class="galleryOptionImage"><img src="@/assets/images/lænestol31.jpg" alt=""></div>
-      <div class="galleryOptionImage"><img src="@/assets/images/lænestol32.jpg" alt=""></div>
-      <div class="galleryOptionImage"><img src="@/assets/images/lænestol31.jpg" alt=""></div>
-      <div class="galleryOptionImage"><img src="@/assets/images/lænestol32.jpg" alt=""></div>
+      <div class="galleryOptionImage" v-for="image in props.extraImages">
+        <img :src="image" alt="Mindre billede af produkt">
+      </div>
+
     </div>
   </div>
 </template>

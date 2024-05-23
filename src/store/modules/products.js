@@ -6,19 +6,22 @@ const state = () => ({
             category: 'lænesstol',
             title: 'Bamsestol',
             description: 'Jeg er hammer dyr!',
+            material: "Jeg er lavet ud af en masse træ og får",
             price_dkk: 41800,
             images: {
-                main: 'https://source.unsplash.com/random/200x200?sig=4',
+                main: 'https://source.unsplash.com/random/200x200?sig=22',
                 extra: [
-                    'http://gogleimages/bamsestol2.jpg',
-                    'http://gogleimages/bamsestol3.jpg'
+                    'https://source.unsplash.com/random/200x200?sig=23',
+                    'https://source.unsplash.com/random/200x200?sig=25',
+                    'https://source.unsplash.com/random/200x200?sig=26',
+                    'https://source.unsplash.com/random/200x200?sig=27',
                 ],
             },
             weight_kilo: 28,
         },
         {
             id: 2,
-            category: 'lænesstol',
+            category: 'trumpet',
             title: 'højstol',
             description: 'shit en dyr stol',
             price_dkk: 120000,

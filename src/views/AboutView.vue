@@ -9,7 +9,7 @@
       </div>
       <div class="aboutContainer">
         <div class="aboutCEO">
-          <div class="abeceo">
+          <div class="CeoImgContainer">
             <img src="@/assets/images/guy.png" alt="Delfin De Nully CEO">
           </div>
           <p>Delfin De Nully, CEO</p>
@@ -55,8 +55,9 @@
 
     .aboutCEO{
       flex: 1;
-      .abeceo{
-        width: 100%;
+      .CeoImgContainer{
+        width: 300px;
+        height: 400px;
         overflow: hidden;
 
         img{

@@ -1,13 +1,14 @@
 <script setup>
 const props = defineProps({
   title: String,
+  price: Number,
 })
 </script>
 
 <template>
   <div class="productImportnantInfoContainer">
     <p class="productInfo">{{ props.title }}</p>
-    <p class="productInfo">30.000 DKK</p>
+    <p class="productInfo">{{ props.price}}DKK</p>
   </div>
 </template>
 

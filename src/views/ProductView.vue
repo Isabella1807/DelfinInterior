@@ -24,10 +24,10 @@ const productId = computed (() => {
 <template>
   <div class="globalContentWidth">
     <div class="productContainer" v-if="product">
-      <ProductGallery class="ProductGallery"/>
+      <ProductGallery class="ProductGallery" :mainImage="product.images.main" :extraImages="product.images.extra"/>
       <div class="informationContainer">
-        <ProductTitle class="ProductTitle" :title="product.title"/>
-        <ProductDescription class="ProductDescription"/>
+        <ProductTitle class="ProductTitle" :title="product.title" :price="product.price_dkk"/>
+        <ProductDescription class="ProductDescription" :description="product.description" :productWeight="product.weight_kilo" :material="product.material"/>
         <ProductIcons class="ProductIcons"/>
         <ProductAddToBasket class="ProductAddToBasket"/>
       </div>

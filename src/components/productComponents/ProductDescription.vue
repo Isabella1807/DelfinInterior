@@ -1,19 +1,17 @@
 <script setup>
-
+const props = defineProps({
+  description: String,
+  productWeight: Number,
+  material: String,
+})
 </script>
 
 <template>
   <div class="textContainer">
     <div class="descriptionContainer">
-      <p class="descriptionItem">'Wegner Queen Chair' er et majestætisk ekko af 'Ox Chair' design, der modsat det
-        originale dominerende
-        design, besidder et feminint formsprog. Det skulpturelle og 'legende' design, er gengivet fra 'Ox Chair'
-        med de voluminøse armlæn i en organisk dråbeform. Nakkestøtten er fjernet for at kreere en mere åben
-        atmosfære og give den sit karakteristiske majestætiske udtryk, som gør stolen til en af Wegners mest
-        elegante og ikke mindst ikoniske, lænestole.</p>
-      <p class="descriptionItem">Stel udført i børstet eller sortlakeret rustfrit stål. Sæde
-        med blindstel i massivtræ og formstøbt koldskum, polstret i ønsket tekstil eller læder</p>
-      <p class="descriptionItem">Vægt: 28 kg </p>
+      <p class="descriptionItem">{{props.description}}</p>
+      <p class="descriptionItem">{{props.material}}</p>
+      <p class="descriptionItem">Vægt: {{ props.productWeight }} kg </p>
     </div>
   </div>
 </template>
