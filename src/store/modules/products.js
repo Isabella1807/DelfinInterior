@@ -28,8 +28,8 @@ const state = () => ({
             images: {
                 main: 'https://source.unsplash.com/random/200x200?sig=2',
                 extra: [
-                    'http://gogleimages/bamsestol2.jpg',
-                    'http://gogleimages/bamsestol3.jpg'
+                    'https://source.unsplash.com/random/200x200?sig=26',
+                    'https://source.unsplash.com/random/200x200?sig=27',
                 ],
             },
             weight_kilo: 31,
