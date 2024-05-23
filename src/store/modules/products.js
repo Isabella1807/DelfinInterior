@@ -124,7 +124,7 @@ const state = () => ({
         {
             id: 9,
             category: 'Borde',
-            title: 'jeg er et bord jeg er et bord',
+            title: 'jeg er et bord jeg er et bord jeg er et bord jeg er et bord jeg er et bord jeg er et bord jeg er et bord jeg er et bord',
             description: 'Jeg er super meget et bord ok',
             price_dkk: 1234,
             images: {

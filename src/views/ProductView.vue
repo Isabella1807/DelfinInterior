@@ -1,9 +1,18 @@
 <script setup>
+import {useStore} from "vuex";
+import {computed} from "vue";
 import ProductGallery from "@/components/productComponents/ProductGallery.vue";
 import ProductTitle from "@/components/productComponents/ProductTitle.vue";
 import ProductDescription from "@/components/productComponents/ProductDescription.vue";
 import ProductIcons from "@/components/productComponents/ProductIcons.vue";
 import ProductAddToBasket from "@/components/productComponents/ProductAddToBasket.vue";
+
+const store = useStore();
+
+const products = computed(() => store.getters["products/getAllProducts"])
+const product = computed(() => store.getters["products/getProductById"])
+
+console.log(product);
 </script>
 
 <template>
@@ -11,7 +20,7 @@ import ProductAddToBasket from "@/components/productComponents/ProductAddToBaske
     <div class="productContainer">
       <ProductGallery class="ProductGallery"/>
       <div class="informationContainer">
-        <ProductTitle class="ProductTitle"/>
+        <ProductTitle class="ProductTitle" :title="products.title"/>
         <ProductDescription class="ProductDescription"/>
         <ProductIcons class="ProductIcons"/>
         <ProductAddToBasket class="ProductAddToBasket"/>

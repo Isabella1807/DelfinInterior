@@ -1,10 +1,12 @@
 <script setup>
-
+const props = defineProps({
+  title: String,
+})
 </script>
 
 <template>
   <div class="productImportnantInfoContainer">
-    <p class="productInfo">Hans J. Wegner Queen</p>
+    <p class="productInfo">{{ props.title }}</p>
     <p class="productInfo">30.000 DKK</p>
   </div>
 </template>
