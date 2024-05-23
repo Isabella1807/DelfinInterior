@@ -10,6 +10,7 @@ const props = defineProps({
   imgPath: String,
   price: Number,
   title: String,
+  id: Number,
 })
 
 const formattedPrice = computed(() => {
@@ -19,7 +20,7 @@ const formattedPrice = computed(() => {
 
 <template>
   <div class="productCardContainer">
-    <router-link to="/product">
+    <router-link :to="`/product/${props.id}`">
       <div class="productImageContainer">
         <img :src="props.imgPath" alt="" class="productImage">
       </div>
@@ -29,7 +30,7 @@ const formattedPrice = computed(() => {
       <p>{{ props.title }}</p>
       <div class="lowerTextContainerItems">
         <p>{{ formattedPrice }}</p>
-        <router-link to="/product">
+        <router-link :to="`/product/${props.id}`">
           <div class="productReadMore">
             <p>Læs mere</p>
           </div>

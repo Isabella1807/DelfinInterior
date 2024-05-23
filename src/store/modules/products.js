@@ -62,7 +62,7 @@ const state = () => ({
             weight_kilo: 99,
         },
         {
-            id: 4,
+            id: 5,
             category: 'spisestol',
             title: 'syverstol',
             description: 'Jeg er bare en super fancy stol man glider ned af',
@@ -77,7 +77,7 @@ const state = () => ({
             weight_kilo: 7,
         },
         {
-            id: 5,
+            id: 6,
             category: 'spisestol',
             title: 'endnu en spisestol',
             description: 'alt for dyr',
@@ -92,7 +92,7 @@ const state = () => ({
             weight_kilo: 28,
         },
         {
-            id: 6,
+            id: 7,
             category: 'spisestol',
             title: 'den lille stol',
             description: 'Jeg er ikke særlig lille faktisk',
@@ -137,7 +137,7 @@ const state = () => ({
             weight_kilo: 5000,
         },
         {
-            id: 10,
+            id: 78,
             category: 'Borde',
             title: 'kaffebord',
             description: 'kaffebordet der ikke må drikkes kaffe på',
@@ -152,7 +152,7 @@ const state = () => ({
             weight_kilo: 12,
         },
         {
-            id: 11,
+            id: 44,
             category: 'Lamper',
             title: 'den der store lampe fra alle for to som de prøver at stjæle',
             description: 'der er noget med den er populær',
@@ -167,7 +167,7 @@ const state = () => ({
             weight_kilo: 40,
         },
         {
-            id: 12,
+            id: 55,
             category: 'Lamper',
             title: 'ph lampe',
             description: 'whatever ph lampe du lige kunne ønske dig, den skaffer vi bare',
@@ -186,8 +186,8 @@ const state = () => ({
 })
 
 const getters = {
-    getProductById: (state) => {
-        return state.products.id
+    getProductById: (state) => (id) => {
+        return state.products.find(product => product.id === id)
     },
     getAllProducts: (state) => {
         return state.products

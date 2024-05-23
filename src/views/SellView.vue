@@ -122,7 +122,7 @@
 
       .smallHeadline {
         font-size: $fontSize20;
-        font-weight: normal;
+        font-weight: 800;
         margin-top: 1rem;
       }
 
@@ -192,7 +192,7 @@
 
         .smallHeadline {
           font-size: $fontSize20;
-          font-weight: normal;
+          font-weight: 800;
           margin-top: 1rem;
         }
       }

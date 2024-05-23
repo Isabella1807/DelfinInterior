@@ -1,6 +1,7 @@
 <script setup>
 import {useStore} from "vuex";
 import {computed} from "vue";
+import { useRouter } from 'vue-router'
 import ProductGallery from "@/components/productComponents/ProductGallery.vue";
 import ProductTitle from "@/components/productComponents/ProductTitle.vue";
 import ProductDescription from "@/components/productComponents/ProductDescription.vue";
@@ -8,19 +9,24 @@ import ProductIcons from "@/components/productComponents/ProductIcons.vue";
 import ProductAddToBasket from "@/components/productComponents/ProductAddToBasket.vue";
 
 const store = useStore();
+const router = useRouter()
 
-const products = computed(() => store.getters["products/getAllProducts"])
-const product = computed(() => store.getters["products/getProductById"])
+const product = computed(() => {
+  return store.getters["products/getProductById"](productId.value)
+})
 
-console.log(product);
+const productId = computed (() => {
+  return Number(router.currentRoute.value.params.id)
+});
+
 </script>
 
 <template>
   <div class="globalContentWidth">
-    <div class="productContainer">
+    <div class="productContainer" v-if="product">
       <ProductGallery class="ProductGallery"/>
       <div class="informationContainer">
-        <ProductTitle class="ProductTitle" :title="products.title"/>
+        <ProductTitle class="ProductTitle" :title="product.title"/>
         <ProductDescription class="ProductDescription"/>
         <ProductIcons class="ProductIcons"/>
         <ProductAddToBasket class="ProductAddToBasket"/>
