@@ -1,11 +1,11 @@
 <script setup>
 import {useStore} from "vuex"
+import {computed} from "vue";
 import Banner from "../components/shopComponents/Banner.vue"
 import homeImage from "@/assets/images/homeImage.jpg";
 import ProductList from "@/components/shopComponents/ProductList.vue";
 import CategorySelector from "@/components/shopComponents/CategorySelector.vue";
 import ShopHeader from "@/components/shopComponents/ShopHeader.vue";
-import {computed} from "vue";
 
 const store = useStore();
 

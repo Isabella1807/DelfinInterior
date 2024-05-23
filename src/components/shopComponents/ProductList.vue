@@ -5,7 +5,7 @@ import {computed} from "vue";
 
 const store = useStore();
 
-const products = computed(() => store.getters["products/getAllProducts"])
+const products = computed(() => store.getters["products/getAllProductsInCategory"])
 </script>
 
 <template>

@@ -204,7 +204,13 @@ const getters = {
         return sortedCategories
     },
     getAllProductsInCategory: (state) => {
-        return []
+        if (state.selectedCategory === ''){
+            return state.products
+        }
+
+        return state.products.filter((product) => {
+            return product.category === state.selectedCategory
+        })
     },
     getSelectedCategory: (state) => {
         return state.selectedCategory ? state.selectedCategory : "Alle produkter"
