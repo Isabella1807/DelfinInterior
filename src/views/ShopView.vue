@@ -42,9 +42,9 @@ const category = computed(() => store.getters["products/getSelectedCategory"])
   }
 }
 
-@include md {
+/*@include md {
   .lowerShopContainer {
     justify-content: space-between;
   }
-}
+}*/
 </style>

@@ -45,6 +45,8 @@ const formattedPrice = computed(() => {
 <style scoped lang="scss">
 .productCardContainer {
   background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
   /*  border: 1px solid green;*/
 
   .productImageContainer {
@@ -63,6 +65,10 @@ const formattedPrice = computed(() => {
   .productTextContainer {
     padding: 0.5rem;
     font-size: $fontSize20;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
 
     .lowerTextContainerItems {
       display: flex;
