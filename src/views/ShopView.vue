@@ -6,17 +6,12 @@ import homeImage from "@/assets/images/homeImage.jpg";
 import ProductList from "@/components/shopComponents/ProductList.vue";
 import CategorySelector from "@/components/shopComponents/CategorySelector.vue";
 import ShopHeader from "@/components/shopComponents/ShopHeader.vue";
-
-const store = useStore();
-
-const category = computed(() => store.getters["products/getSelectedCategory"])
-
 </script>
 
 <template>
   <div class="globalContentWidth">
     <div class="shopContainer">
-      <Banner :bannerImg="homeImage" :shopCategory="category"/>
+      <Banner :bannerImg="homeImage" :shopCategory="selectedCategory"/>
       <div class="shopContentContainer">
         <ShopHeader/>
         <div class="lowerShopContainer">

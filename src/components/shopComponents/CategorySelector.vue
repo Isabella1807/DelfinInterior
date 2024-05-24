@@ -5,6 +5,7 @@ import {computed} from 'vue';
 const store = useStore();
 
 const categories = computed(() => store.getters["products/getAllCategories"])
+const selectedCategory = computed(() => store.getters)
 
 
 const selectCategory = (category) => {
@@ -18,7 +19,7 @@ const selectCategory = (category) => {
       <p>Kategorier</p>
     </div>
     <div>
-      <p v-for="category in categories" @click="selectCategory(category)"> {{ category }} </p>
+      <p class="categories" v-for="category in categories" @click="selectCategory(category)"> {{ category }} </p>
     </div>
   </div>
 </template>
@@ -35,6 +36,11 @@ const selectCategory = (category) => {
     line-height: 2rem;
     margin-bottom: 0.5rem;
     display: inline-block;
+  }
+  .categories{
+    &:hover{
+      cursor:pointer;
+    }
   }
 }
 
