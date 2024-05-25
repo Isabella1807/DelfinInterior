@@ -1,14 +1,44 @@
 <script setup>
+import {useStore} from "vuex"
+import {computed} from "vue"
+import {useRouter} from "vue-router";
+
+const store = useStore();
+const router = useRouter()
+
+const isUserAdmin = computed(() => store.getters["user/isAdmin"])
+
 const props = defineProps({
   title: String,
   price: Number,
+  id: Number,
 })
+
+const onClickEdit = () => {
+  console.log("edit");
+  store.dispatch('products/editProduct', {title: "Mit nye navn"});
+}
+const onClickDelete = () => {
+  if (confirm("Er du sikker på du vil slette hele produktet?")) {
+    store.dispatch('products/deleteProduct', props.id);
+  }
+}
 </script>
 
 <template>
   <div class="productImportnantInfoContainer">
-    <p class="productInfo">{{ props.title }}</p>
-    <p class="productInfo">{{ props.price}}DKK</p>
+    <div class="titleItemsContainer">
+      <p class="productInfo">{{ props.title }}</p>
+      <div class="adminItemsContainer" v-if="isUserAdmin">
+        <div class="adminItem" @click="onClickEdit">
+          <img src="@/assets/icons/edit.png" alt="rediger produkt">
+        </div>
+        <div class="adminItem" @click="onClickDelete">
+          <img src="@/assets/icons/trash.png" alt="slet produkt">
+        </div>
+      </div>
+    </div>
+    <p class="productInfo">{{ props.price }}DKK</p>
   </div>
 </template>
 
@@ -16,6 +46,23 @@ const props = defineProps({
 .productImportnantInfoContainer {
   border-bottom: 1px solid $fontColorBlack;
   color: $fontColorBlack;
+
+  .titleItemsContainer {
+    display: flex;
+    justify-content: space-between;
+
+    .adminItemsContainer {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+
+      .adminItem {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
 
   .productInfo {
     font-size: $fontSize24;

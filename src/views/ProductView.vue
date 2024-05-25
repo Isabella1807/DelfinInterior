@@ -26,7 +26,7 @@ const productId = computed (() => {
     <div class="productContainer" v-if="product">
       <ProductGallery class="ProductGallery" :mainImage="product.images.main" :extraImages="product.images.extra"/>
       <div class="informationContainer">
-        <ProductTitle class="ProductTitle" :title="product.title" :price="product.price_dkk"/>
+        <ProductTitle class="ProductTitle" :title="product.title" :price="product.price_dkk" :id="productId"/>
         <ProductDescription class="ProductDescription" :description="product.description" :productWeight="product.weight_kilo" :material="product.material"/>
         <ProductIcons class="ProductIcons"/>
         <ProductAddToBasket class="ProductAddToBasket"/>

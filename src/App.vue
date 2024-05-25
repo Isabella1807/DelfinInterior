@@ -1,14 +1,16 @@
 <script setup>
 import TheHeader from "./components/TheHeader.vue";
 import TheFooter from "./components/TheFooter.vue";
+import editOverlay from "./components/EditProductOverlay.vue";
 </script>
 
 <template>
-  <TheHeader></TheHeader>
+  <TheHeader/>
   <main>
+    <editOverlay/>
     <RouterView/>
   </main>
-  <TheFooter></TheFooter>
+  <TheFooter/>
 </template>
 
 <style scoped lang="scss">

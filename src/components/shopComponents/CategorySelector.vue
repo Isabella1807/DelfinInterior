@@ -5,8 +5,6 @@ import {computed} from 'vue';
 const store = useStore();
 
 const categories = computed(() => store.getters["products/getAllCategories"])
-const selectedCategory = computed(() => store.getters)
-
 
 const selectCategory = (category) => {
   store.dispatch('products/setCategory', category);

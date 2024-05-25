@@ -28,6 +28,8 @@ const state = () => ({
             images: {
                 main: 'https://source.unsplash.com/random/200x200?sig=2',
                 extra: [
+                    'https://source.unsplash.com/random/200x200?sig=23',
+                    'https://source.unsplash.com/random/200x200?sig=25',
                     'https://source.unsplash.com/random/200x200?sig=26',
                     'https://source.unsplash.com/random/200x200?sig=27',
                 ],
@@ -43,8 +45,10 @@ const state = () => ({
             images: {
                 main: 'https://source.unsplash.com/random/200x200?sig=1',
                 extra: [
-                    'http://gogleimages/bamsestol2.jpg',
-                    'http://gogleimages/bamsestol3.jpg'
+                    'https://source.unsplash.com/random/200x200?sig=23',
+                    'https://source.unsplash.com/random/200x200?sig=25',
+                    'https://source.unsplash.com/random/200x200?sig=26',
+                    'https://source.unsplash.com/random/200x200?sig=27',
                 ],
             },
             weight_kilo: 10,
@@ -58,8 +62,10 @@ const state = () => ({
             images: {
                 main: 'https://source.unsplash.com/random/200x200?sig=3',
                 extra: [
-                    'http://gogleimages/bamsestol2.jpg',
-                    'http://gogleimages/bamsestol3.jpg'
+                    'https://source.unsplash.com/random/200x200?sig=23',
+                    'https://source.unsplash.com/random/200x200?sig=25',
+                    'https://source.unsplash.com/random/200x200?sig=26',
+                    'https://source.unsplash.com/random/200x200?sig=27',
                 ],
             },
             weight_kilo: 99,
@@ -73,8 +79,10 @@ const state = () => ({
             images: {
                 main: 'https://source.unsplash.com/random/200x200?sig=6',
                 extra: [
-                    'http://gogleimages/bamsestol2.jpg',
-                    'http://gogleimages/bamsestol3.jpg'
+                    'https://source.unsplash.com/random/200x200?sig=23',
+                    'https://source.unsplash.com/random/200x200?sig=25',
+                    'https://source.unsplash.com/random/200x200?sig=26',
+                    'https://source.unsplash.com/random/200x200?sig=27',
                 ],
             },
             weight_kilo: 7,
@@ -88,8 +96,10 @@ const state = () => ({
             images: {
                 main: 'https://source.unsplash.com/random/200x200?sig=7',
                 extra: [
-                    'http://gogleimages/bamsestol2.jpg',
-                    'http://gogleimages/bamsestol3.jpg'
+                    'https://source.unsplash.com/random/200x200?sig=23',
+                    'https://source.unsplash.com/random/200x200?sig=25',
+                    'https://source.unsplash.com/random/200x200?sig=26',
+                    'https://source.unsplash.com/random/200x200?sig=27',
                 ],
             },
             weight_kilo: 28,
@@ -103,8 +113,10 @@ const state = () => ({
             images: {
                 main: 'https://source.unsplash.com/random/200x200?sig=8',
                 extra: [
-                    'http://gogleimages/bamsestol2.jpg',
-                    'http://gogleimages/bamsestol3.jpg'
+                    'https://source.unsplash.com/random/200x200?sig=23',
+                    'https://source.unsplash.com/random/200x200?sig=25',
+                    'https://source.unsplash.com/random/200x200?sig=26',
+                    'https://source.unsplash.com/random/200x200?sig=27',
                 ],
             },
             weight_kilo: 120,
@@ -118,8 +130,10 @@ const state = () => ({
             images: {
                 main: 'https://source.unsplash.com/random/200x200?sig=13',
                 extra: [
-                    'http://gogleimages/bamsestol2.jpg',
-                    'http://gogleimages/bamsestol3.jpg'
+                    'https://source.unsplash.com/random/200x200?sig=23',
+                    'https://source.unsplash.com/random/200x200?sig=25',
+                    'https://source.unsplash.com/random/200x200?sig=26',
+                    'https://source.unsplash.com/random/200x200?sig=27',
                 ],
             },
             weight_kilo: 80,
@@ -133,8 +147,10 @@ const state = () => ({
             images: {
                 main: 'https://source.unsplash.com/random/200x200?sig=9',
                 extra: [
-                    'http://gogleimages/bamsestol2.jpg',
-                    'http://gogleimages/bamsestol3.jpg'
+                    'https://source.unsplash.com/random/200x200?sig=23',
+                    'https://source.unsplash.com/random/200x200?sig=25',
+                    'https://source.unsplash.com/random/200x200?sig=26',
+                    'https://source.unsplash.com/random/200x200?sig=27',
                 ],
             },
             weight_kilo: 5000,
@@ -148,8 +164,10 @@ const state = () => ({
             images: {
                 main: 'https://source.unsplash.com/random/200x200?sig=10',
                 extra: [
-                    'http://gogleimages/bamsestol2.jpg',
-                    'http://gogleimages/bamsestol3.jpg'
+                    'https://source.unsplash.com/random/200x200?sig=23',
+                    'https://source.unsplash.com/random/200x200?sig=25',
+                    'https://source.unsplash.com/random/200x200?sig=26',
+                    'https://source.unsplash.com/random/200x200?sig=27',
                 ],
             },
             weight_kilo: 12,
@@ -163,8 +181,10 @@ const state = () => ({
             images: {
                 main: 'https://source.unsplash.com/random/200x200?sig=11',
                 extra: [
-                    'http://gogleimages/bamsestol2.jpg',
-                    'http://gogleimages/bamsestol3.jpg'
+                    'https://source.unsplash.com/random/200x200?sig=23',
+                    'https://source.unsplash.com/random/200x200?sig=25',
+                    'https://source.unsplash.com/random/200x200?sig=26',
+                    'https://source.unsplash.com/random/200x200?sig=27',
                 ],
             },
             weight_kilo: 40,
@@ -178,8 +198,10 @@ const state = () => ({
             images: {
                 main: 'https://source.unsplash.com/random/200x200?sig=12',
                 extra: [
-                    'http://gogleimages/bamsestol2.jpg',
-                    'http://gogleimages/bamsestol3.jpg'
+                    'https://source.unsplash.com/random/200x200?sig=23',
+                    'https://source.unsplash.com/random/200x200?sig=25',
+                    'https://source.unsplash.com/random/200x200?sig=26',
+                    'https://source.unsplash.com/random/200x200?sig=27',
                 ],
             },
             weight_kilo: 5,
@@ -204,7 +226,7 @@ const getters = {
         return sortedCategories
     },
     getAllProductsInCategory: (state) => {
-        if (state.selectedCategory === ''){
+        if (state.selectedCategory === '') {
             return state.products
         }
 
@@ -224,13 +246,22 @@ const actions = {
     setCategory({state, commit}, category) {
         commit('overwriteCategory', category)
     },
+    resetCategory({commit}) {
+        commit('overwriteCategory', '')
+    },
+    editProduct({state, commit}, newProductInfo) {
+        console.log('fra store editproduct', newProductInfo)
+    },
+    deleteProduct({state, commit}, productIdToDelete) {
+        console.log("fra store deleteproduct", productIdToDelete)
+    }
 }
 
 const mutations = {
     setCounter(state, newValue) {
         state.count = newValue;
     },
-    overwriteCategory(state, newCategory){
+    overwriteCategory(state, newCategory) {
         state.selectedCategory = newCategory
     }
 }

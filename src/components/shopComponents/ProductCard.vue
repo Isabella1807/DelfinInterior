@@ -1,10 +1,5 @@
 <script setup>
-import {useStore} from 'vuex';
 import {computed} from 'vue';
-
-const store = useStore();
-
-const categories = computed(() => store.getters["products/getAllCategories"])
 
 const props = defineProps({
   imgPath: String,

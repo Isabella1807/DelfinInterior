@@ -64,7 +64,7 @@ header {
   height: 8rem;
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 10;
   background-color: #738272;
   align-items: center;
   box-shadow: 1px 4px 9px 0px rgba(0,0,0,0.31);
