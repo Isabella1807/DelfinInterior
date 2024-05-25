@@ -2,12 +2,21 @@
 import TheHeader from "./components/TheHeader.vue";
 import TheFooter from "./components/TheFooter.vue";
 import editOverlay from "./components/EditProductOverlay.vue";
+import {useStore} from "vuex"
+import {computed} from "vue"
+import {useRouter} from "vue-router";
+
+const store = useStore();
+const router = useRouter()
+
+const isEditingProductState = computed(() => store.getters["products/getIsEditingProduct"])
+
 </script>
 
 <template>
   <TheHeader/>
   <main>
-    <editOverlay/>
+    <editOverlay v-if="isEditingProductState"/>
     <RouterView/>
   </main>
   <TheFooter/>

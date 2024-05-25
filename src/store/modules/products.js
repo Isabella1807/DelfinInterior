@@ -1,5 +1,5 @@
 const state = () => ({
-    count: 0,
+    isEditingProduct: false,
     products: [
         {
             id: 1,
@@ -236,13 +236,13 @@ const getters = {
     },
     getSelectedCategory: (state) => {
         return state.selectedCategory ? state.selectedCategory : "Alle produkter"
+    },
+    getIsEditingProduct: (state) => {
+        return state.isEditingProduct
     }
 }
 
 const actions = {
-    incrementCounter({state, commit}) {
-        commit('setCounter', state.count + 1)
-    },
     setCategory({state, commit}, category) {
         commit('overwriteCategory', category)
     },
@@ -254,6 +254,9 @@ const actions = {
     },
     deleteProduct({state, commit}, productIdToDelete) {
         console.log("fra store deleteproduct", productIdToDelete)
+    },
+    setEditingProductState({state, commit}, isEditing){
+        commit('overwriteIsEditing', isEditing)
     }
 }
 
@@ -263,6 +266,9 @@ const mutations = {
     },
     overwriteCategory(state, newCategory) {
         state.selectedCategory = newCategory
+    },
+    overwriteIsEditing(state, newIsEditingState){
+        state.isEditingProduct = newIsEditingState
     }
 }
 

@@ -1,10 +1,8 @@
 <script setup>
 import {useStore} from "vuex"
 import {computed} from "vue"
-import {useRouter} from "vue-router";
 
 const store = useStore();
-const router = useRouter()
 
 const isUserAdmin = computed(() => store.getters["user/isAdmin"])
 
@@ -16,7 +14,8 @@ const props = defineProps({
 
 const onClickEdit = () => {
   console.log("edit");
-  store.dispatch('products/editProduct', {title: "Mit nye navn"});
+  store.dispatch('products/setEditingProductState', true);
+
 }
 const onClickDelete = () => {
   if (confirm("Er du sikker på du vil slette hele produktet?")) {

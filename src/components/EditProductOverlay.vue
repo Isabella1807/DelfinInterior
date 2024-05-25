@@ -1,5 +1,14 @@
 <script setup>
+import {useStore} from "vuex"
 
+const store = useStore();
+const cancelEditing = () => {
+  store.dispatch('products/setEditingProductState', false);
+}
+
+const onSave = () => {
+  store.dispatch('products/editProduct', {title: "Mit nye navn"});
+}
 </script>
 
 <template>
@@ -24,10 +33,10 @@
           <textarea class="inputToEdit" name="description" id="description" placeholder="produkt beskrivelsen"/>
         </div>
         <div class="buttonsContainer">
-          <div id="cancel" class="button">
+          <div id="cancel" class="button" @click="cancelEditing">
             <p>Cancel</p>
           </div>
-          <div id="save" class="button">
+          <div id="save" class="button" @click="onSave">
             <p>Gem</p>
           </div>
         </div>
