@@ -1,14 +1,26 @@
 <script setup>
 import {useStore} from "vuex"
+import {computed, ref} from "vue";
 
 const store = useStore();
 const cancelEditing = () => {
-  store.dispatch('products/setEditingProductState', false);
+  store.dispatch('products/cancelEditingProduct');
 }
 
 const onSave = () => {
-  store.dispatch('products/editProduct', {title: "Mit nye navn"});
+  store.dispatch('products/editProduct', product.value);
 }
+
+const existingProduct = computed(() => store.getters["products/getEditingProduct"])
+
+const product = ref({
+  title: existingProduct.value.title,
+  price_dkk: existingProduct.value.price_dkk,
+  weight_kilo: existingProduct.value.weight_kilo,
+  description: existingProduct.value.description,
+  id: existingProduct.value.id
+})
+
 </script>
 
 <template>
@@ -18,19 +30,19 @@ const onSave = () => {
         <p class="editOverlayHeader">Rediger produkt</p>
         <div class="inputContainer">
           <label for="title">Produkt navn</label>
-          <input class="inputToEdit" name="title" id="title" type="text" placeholder="produkt navn">
+          <input class="inputToEdit" name="title" id="title" type="text" placeholder="produkt navn" v-model="product.title">
         </div>
         <div class="inputContainer">
           <label for="price">Produkt pris</label>
-          <input class="inputToEdit" name="price" id="price" type="text" placeholder="produkt pris">
+          <input class="inputToEdit" name="price" id="price" type="text" placeholder="produkt pris" v-model="product.price_dkk">
         </div>
         <div class="inputContainer">
           <label for="weight">Produkt vægt</label>
-          <input class="inputToEdit" name="weight" id="weight" type="text" placeholder="produkt vægt">
+          <input class="inputToEdit" name="weight" id="weight" type="text" placeholder="produkt vægt" v-model="product.weight_kilo">
         </div>
         <div class="inputContainer">
           <label for="description">Produkt beskrivelse</label>
-          <textarea class="inputToEdit" name="description" id="description" placeholder="produkt beskrivelsen"/>
+          <textarea class="inputToEdit" name="description" id="description" placeholder="produkt beskrivelsen" v-model="product.description"/>
         </div>
         <div class="buttonsContainer">
           <div id="cancel" class="button" @click="cancelEditing">

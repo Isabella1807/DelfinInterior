@@ -14,7 +14,7 @@ const props = defineProps({
 
 const onClickEdit = () => {
   console.log("edit");
-  store.dispatch('products/setEditingProductState', true);
+  store.dispatch('products/startEditingProduct', props.id);
 
 }
 const onClickDelete = () => {
