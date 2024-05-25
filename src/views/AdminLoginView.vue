@@ -1,11 +1,13 @@
 <script setup>
 import {ref} from 'vue';
 import {useStore} from 'vuex'
+import {useRouter} from 'vue-router'
 
+const router = useRouter();
 const store = useStore();
 const adminName = ref('');
 const adminPassword = ref('');
-let errorInLogin = false;
+let errorInLogin = ref(false);
 
 const loginAsAdmin = async () => {
   const success = await store.dispatch('user/login', {username: adminName.value, password: adminPassword.value})
@@ -13,9 +15,10 @@ const loginAsAdmin = async () => {
   if (success) {
     adminName.value = '';
     adminPassword.value = '';
-    errorInLogin = false;
+    errorInLogin.value = false;
+    router.push('/');
   } else {
-    errorInLogin = true;
+    errorInLogin.value = true;
   }
 }
 </script>

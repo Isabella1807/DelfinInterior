@@ -1,20 +1,4 @@
 <script setup>
-import {testdb} from "@/database/initFirebase.js"
-import {collection, getDocs} from "firebase/firestore";
-
-const store = useStore();
-
-const selectedCategory = computed(() => store.getters["products/getSelectedCategory"])
-
-const colRef = collection(testdb.db, 'products')
-getDocs(colRef) //Henter alle docuemnter inde i colRef collectionen
-    .then ((snapshot) => {
-      let products = []
-      snapshot.docs.forEach((doc) => {
-        products.push({...doc.data(), id: doc.id})
-      })
-      console.log(products)
-    })
 </script>
 
 <template>
