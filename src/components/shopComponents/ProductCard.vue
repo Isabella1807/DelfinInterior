@@ -1,11 +1,11 @@
 <script setup>
-import {computed} from 'vue';
+import {computed, onMounted} from 'vue';
 
 const props = defineProps({
   imgPath: String,
   price: Number,
   title: String,
-  id: Number,
+  id: String,
 })
 
 const formattedPrice = computed(() => {

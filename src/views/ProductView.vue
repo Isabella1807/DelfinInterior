@@ -16,7 +16,7 @@ const product = computed(() => {
 })
 
 const productId = computed (() => {
-  return Number(router.currentRoute.value.params.id)
+  return router.currentRoute.value.params.id
 });
 
 </script>
@@ -24,10 +24,10 @@ const productId = computed (() => {
 <template>
   <div class="globalContentWidth">
     <div class="productContainer" v-if="product">
-      <ProductGallery class="ProductGallery" :mainImage="product.images.main" :extraImages="product.images.extra"/>
+      <ProductGallery class="ProductGallery" :mainImage="product.mainImage" :extraImages="product.extraImages"/>
       <div class="informationContainer">
-        <ProductTitle class="ProductTitle" :title="product.title" :price="product.price_dkk" :id="productId"/>
-        <ProductDescription class="ProductDescription" :description="product.description" :productWeight="product.weight_kilo" :material="product.material"/>
+        <ProductTitle class="ProductTitle" :title="product.title" :price="product.priceDKK" :id="productId"/>
+        <ProductDescription class="ProductDescription" :description="product.description" :productWeight="product.weightKilo" :material="product.material"/>
         <ProductIcons class="ProductIcons"/>
         <ProductAddToBasket class="ProductAddToBasket"/>
       </div>

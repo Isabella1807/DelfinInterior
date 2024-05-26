@@ -8,16 +8,25 @@ const cancelEditing = () => {
 }
 
 const onSave = () => {
-  store.dispatch('products/editProduct', product.value);
+  store.dispatch('products/saveProduct', product.value);
 }
 
 const existingProduct = computed(() => store.getters["products/getEditingProduct"])
 
 const product = ref({
   title: existingProduct.value?.title ?? '',
-  price_dkk: existingProduct.value?.price_dkk ?? null,
-  weight_kilo: existingProduct.value?.weight_kilo ?? null,
+  priceDKK: existingProduct.value?.priceDKK ?? null,
+  weightKilo: existingProduct.value?.weightKilo ?? null,
   description: existingProduct.value?.description ?? '',
+  material: existingProduct.value?.material ?? '',
+  category: existingProduct.value?.category ?? '',
+  mainImage: existingProduct.value?.mainImage ?? 'https://source.unsplash.com/random/200x200?sig=1',
+  extraImages: existingProduct.value?.extraImages ?? [
+    'https://source.unsplash.com/random/200x200?sig=23',
+    'https://source.unsplash.com/random/200x200?sig=25',
+    'https://source.unsplash.com/random/200x200?sig=26',
+    'https://source.unsplash.com/random/200x200?sig=27',
+  ],
   id: existingProduct.value?.id ?? null
 })
 
@@ -30,19 +39,33 @@ const product = ref({
         <p class="editOverlayHeader">Rediger produkt</p>
         <div class="inputContainer">
           <label for="title">Produkt navn</label>
-          <input class="inputToEdit" name="title" id="title" type="text" placeholder="produkt navn" v-model="product.title">
+          <input class="inputToEdit" name="title" id="title" type="text" placeholder="produkt navn"
+                 v-model="product.title">
         </div>
         <div class="inputContainer">
           <label for="price">Produkt pris</label>
-          <input class="inputToEdit" name="price" id="price" type="number" placeholder="produkt pris" v-model="product.price_dkk">
+          <input class="inputToEdit" name="price" id="price" type="number" placeholder="produkt pris"
+                 v-model="product.priceDKK">
         </div>
         <div class="inputContainer">
           <label for="weight">Produkt vægt</label>
-          <input class="inputToEdit" name="weight" id="weight" type="number" placeholder="produkt vægt" v-model="product.weight_kilo">
+          <input class="inputToEdit" name="weight" id="weight" type="number" placeholder="produkt vægt"
+                 v-model="product.weightKilo">
+        </div>
+        <div class="inputContainer">
+          <label for="category">Produkt kategori</label>
+          <input class="inputToEdit" name="category" id="category" type="text" placeholder="produkt kategori"
+                 v-model="product.category">
+        </div>
+        <div class="inputContainer">
+          <label for="material">Produkt materiale beskrivelse</label>
+          <textarea class="inputToEdit" name="material" id="material" placeholder="produkt materiale beskrivelse"
+                    v-model="product.material"/>
         </div>
         <div class="inputContainer">
           <label for="description">Produkt beskrivelse</label>
-          <textarea class="inputToEdit" name="description" id="description" placeholder="produkt beskrivelsen" v-model="product.description"/>
+          <textarea class="inputToEdit" name="description" id="description" placeholder="produkt beskrivelsen"
+                    v-model="product.description"/>
         </div>
         <div class="buttonsContainer">
           <div id="cancel" class="button" @click="cancelEditing">

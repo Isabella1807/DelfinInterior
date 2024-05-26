@@ -28,8 +28,8 @@ const openAddNewProduct = () => {
         v-for="product in products"
         :key="product.id"
         :id="product.id"
-        :imgPath="product.images.main"
-        :price="product.price_dkk"
+        :imgPath="product.mainImage"
+        :price="product.priceDKK"
         :title="product.title"
     />
   </div>

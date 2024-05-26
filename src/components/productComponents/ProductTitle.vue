@@ -9,7 +9,7 @@ const isUserAdmin = computed(() => store.getters["user/isAdmin"])
 const props = defineProps({
   title: String,
   price: Number,
-  id: Number,
+  id: String,
 })
 
 const onClickEdit = () => {

@@ -17,13 +17,4 @@ const app = initializeApp(firebaseConfig);
 /*const analytics = getAnalytics(app);*/
 const db = getFirestore(app);
 
-addDoc(collection(db, "tester"), {
-    title: "tester",
-    price: 500,
-}).then(docRef => {
-    console.log(docRef.id)
-}).catch(error => {
-    console.log(error)
-})
-
 export default db;
