@@ -7,7 +7,6 @@ const store = useStore();
 const categories = computed(() => store.getters["products/getAllCategories"])
 const selectedCategory = computed(() => store.getters["products/getSelectedCategory"])
 const selectCategory = (category) => {
-
   if (selectedCategory.value === category) {
     store.dispatch("products/resetCategory")
   } else {
