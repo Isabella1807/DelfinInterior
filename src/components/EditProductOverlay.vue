@@ -14,11 +14,11 @@ const onSave = () => {
 const existingProduct = computed(() => store.getters["products/getEditingProduct"])
 
 const product = ref({
-  title: existingProduct.value.title,
-  price_dkk: existingProduct.value.price_dkk,
-  weight_kilo: existingProduct.value.weight_kilo,
-  description: existingProduct.value.description,
-  id: existingProduct.value.id
+  title: existingProduct.value?.title ?? '',
+  price_dkk: existingProduct.value?.price_dkk ?? null,
+  weight_kilo: existingProduct.value?.weight_kilo ?? null,
+  description: existingProduct.value?.description ?? '',
+  id: existingProduct.value?.id ?? null
 })
 
 </script>
@@ -34,11 +34,11 @@ const product = ref({
         </div>
         <div class="inputContainer">
           <label for="price">Produkt pris</label>
-          <input class="inputToEdit" name="price" id="price" type="text" placeholder="produkt pris" v-model="product.price_dkk">
+          <input class="inputToEdit" name="price" id="price" type="number" placeholder="produkt pris" v-model="product.price_dkk">
         </div>
         <div class="inputContainer">
           <label for="weight">Produkt vægt</label>
-          <input class="inputToEdit" name="weight" id="weight" type="text" placeholder="produkt vægt" v-model="product.weight_kilo">
+          <input class="inputToEdit" name="weight" id="weight" type="number" placeholder="produkt vægt" v-model="product.weight_kilo">
         </div>
         <div class="inputContainer">
           <label for="description">Produkt beskrivelse</label>

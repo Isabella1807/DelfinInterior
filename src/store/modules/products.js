@@ -1,5 +1,4 @@
 const state = () => ({
-    isEditingProduct: false,
     products: [
         {
             id: 1,
@@ -209,6 +208,7 @@ const state = () => ({
 
     ],
     selectedCategory: '',
+    isEditingProduct: false,
     editingProductId: null,
 })
 
@@ -254,7 +254,7 @@ const actions = {
         commit('overwriteCategory', '')
     },
     editProduct({state, commit}, newProductInfo) {
-        console.log('fra store editproduct', newProductInfo)
+        console.log('fra store ACTION editproduct', newProductInfo)
     },
     deleteProduct({state, commit}, productIdToDelete) {
         console.log("fra store deleteproduct", productIdToDelete)
