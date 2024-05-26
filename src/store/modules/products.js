@@ -1,4 +1,5 @@
 import productDB from "@/database/products.js"
+import router from "@/router"
 
 const state = () => ({
     products: [],
@@ -58,28 +59,31 @@ const actions = {
         console.log('fra store ACTION saveproduct', newProductInfo)
 
         if (newProductInfo.id === null) {
-            await productDB.addNewProduct({
-                title: newProductInfo.title,
-                priceDKK: newProductInfo.priceDKK,
-                description: newProductInfo.description,
-                material: newProductInfo.material,
-                weightKilo: newProductInfo.weightKilo,
-                category: newProductInfo.category,
-                mainImage: newProductInfo.mainImage,
-                extraImages: newProductInfo.extraImages
-            }).then(() => {
+            await productDB.addNewProduct(newProductInfo).then((newId) => {
+                state.products.push({
+                    ...newProductInfo,
+                    id: newId
+                })
                 dispatch('cancelEditingProduct')
             })
         } else {
             await productDB.editProduct(
                 newProductInfo.id,
                 newProductInfo
-            )
-            dispatch('cancelEditingProduct')
+            ).then(() => {
+                const indexOfUpdatedProduct = state.products.findIndex((p) => p.id === newProductInfo.id)
+                if (indexOfUpdatedProduct >= 0) {
+                    state.products[indexOfUpdatedProduct] = {...newProductInfo, id: newProductInfo.id}
+                }
+                dispatch('cancelEditingProduct')
+            })
         }
     },
-    deleteProduct({state, commit}, productIdToDelete) {
+    async deleteProduct({state, commit}, productIdToDelete) {
         console.log("fra store deleteproduct", productIdToDelete)
+        await productDB.deleteProduct(productIdToDelete)
+        state.products = state.products.filter((productObject) => productObject.id !== productIdToDelete);
+        await router.push('/shop');
     },
     startEditingProduct({state, commit}, productIdInEditing) {
         commit('setEditingState', true)
