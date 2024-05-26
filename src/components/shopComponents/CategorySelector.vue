@@ -5,9 +5,14 @@ import {computed} from 'vue';
 const store = useStore();
 
 const categories = computed(() => store.getters["products/getAllCategories"])
-
+const selectedCategory = computed(() => store.getters["products/getSelectedCategory"])
 const selectCategory = (category) => {
-  store.dispatch('products/setCategory', category);
+
+  if (selectedCategory.value === category) {
+    store.dispatch("products/resetCategory")
+  } else {
+    store.dispatch('products/setCategory', category)
+  }
 }
 </script>
 
@@ -17,7 +22,14 @@ const selectCategory = (category) => {
       <p>Kategorier</p>
     </div>
     <div>
-      <p class="categories" v-for="category in categories" @click="selectCategory(category)"> {{ category }} </p>
+      <p
+          class="categories"
+          :class="{selectedCategory: category === selectedCategory}"
+          v-for="category in categories"
+          @click="selectCategory(category)"
+      >
+        {{ category }}
+      </p>
     </div>
   </div>
 </template>
@@ -36,6 +48,9 @@ const selectCategory = (category) => {
     display: inline-block;
   }
   .categories{
+    &.selectedCategory{
+      font-weight: bold;
+    }
     &:hover{
       cursor:pointer;
     }
