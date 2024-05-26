@@ -8,6 +8,7 @@ import CategorySelector from "@/components/shopComponents/CategorySelector.vue";
 import ShopHeader from "@/components/shopComponents/ShopHeader.vue";
 
 const store = useStore();
+
 const selectedCategory = computed(() => {
   return store.getters["products/getSelectedCategory"]
 })
