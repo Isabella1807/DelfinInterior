@@ -4,7 +4,7 @@ const adminLogin = {
 }
 
 const state = () => ({
-    hasAdminRights: true
+    hasAdminRights: false
 })
 
 const getters = {

@@ -11,23 +11,25 @@
         <div class="infoTextContainer">
           <div class="infoTextContainerHelper">
             <p class="bigFont">Vi køber dine brugte møbler</p>
-            <p>Send os en mail med nedenstående kriterier, så kontakter vi dig med yderligere information.</p>
+            <p class="test">Send os en mail med nedenstående kriterier, så kontakter vi dig med yderligere
+              information.</p>
             <div class="centerAlignedInfo">
+              <div class="criteraContainer">
+                <p>Billede af møblet</p>
+                <p>Stand af møblet</p>
+                <p>Prisen du tager for møblet</p>
+                <p>Designer</p>
+                <p>Alder</p>
+                <p>Materiale</p>
+              </div>
               <div class="contactInfoContainer">
                 <div class="mailIconContainer">
                   <img src="@/assets/icons/mail.png" alt="Vores mail">
                 </div>
                 <p>delfin@hotmail.dk</p>
               </div>
-              <p>Billede af møblet</p>
-              <p>Stand af møblet</p>
-              <p>Prisen du tager for møblet</p>
-              <p>Designer</p>
-              <p>Alder</p>
-              <p>Materiale</p>
             </div>
             <p>Du kan forvente svar indenfor 3-5 hverdage.</p>
-            <p>Vi kommer og henter møblet</p>
           </div>
         </div>
       </div>
@@ -35,68 +37,60 @@
         <div class="sellStepsContainer">
           <p class="bigHeadline"> Læs mere om hele processen her </p>
 
-          <p>Når du sælger dine brugte møbler til Delfin Interior, kan du forvente en smidig og professionel proces fra
-            start til slut. Her er en oversigt over, hvordan det foregår:</p>
+          <p>Når du sælger dine brugte møbler til Delfin Interior, kan du forvente en nem og professionel proces fra
+            start til slut. her kan du se hvordan det foregår:</p>
         </div>
 
         <div class="sellStepsContainer">
           <p class="bigHeadline">Trin 1: Kontakt og Inspektion</p>
           <p class="smallHeadline">Kontakt Delfin Interior:</p>
-          <p>Det første skridt er at tage kontakt til Delfin Interior via telefon eller email for at informere om,
-            hvilke møbler du ønsker at sælge.</p>
-          <p class="smallHeadline">Aftal en inspektion:</p>
-          <p>En repræsentant fra Delfin Interior aftaler en tid for at komme og inspicere møblet. Dette kan være hjemme
+          <p>Første skridt er at tage kontakt til Delfin Interior med telefon eller email. Din mail skal indeholde de
+            ovenstående kriterier.</p>
+          <p class="smallHeadline">Aftal tid til inspektion:</p>
+          <p>En repræsentant fra Delfin Interior kommer efter aftale og inspicere møblet. Det kan være hjemme
             hos dig eller på en anden aftalt lokation.</p>
         </div>
         <div class="sellStepsContainer">
           <p class="bigHeadline">Trin 2: Vurdering og Forhandling</p>
           <p class="smallHeadline">Inspektion af møblet:</p>
-          <p>Repræsentanten fra Delfin Interior undersøger møblets tilstand, kvalitet og eventuelle særlige kendetegn.
-            Dette inkluderer en grundig gennemgang for at vurdere slid, materialer og design.</p>
+          <p>Repræsentanten fra Delfin Interior undersøger møblets tilstand, kvalitet og eventuelle kendetegn</p>
           <p class="smallHeadline">Vurdering:</p>
-          <p>Baseret på inspektionen foretages en professionel vurdering af møblets værdi. Dette tager højde for både
-            møblets aktuelle tilstand og dets værdi på markedet.</p>
+          <p>Baseret på inspektionen foretages en vurdering af møblets værdi.</p>
           <p class="smallHeadline">Prisforhandling:</p>
-          <p>Efter vurderingen diskuterer repræsentanten og du den foreslåede pris. Her kan der forhandles for at nå
-            frem til en pris, som begge parter er tilfredse med.</p>
+          <p>Efter vurderingen kan du og repræsentaten forhandle om pris for møblet, som begge er tilfredse med.</p>
         </div>
         <div class="sellStepsContainer">
           <p class="bigHeadline">Trin 3: Køb og Transport</p>
           <p class="smallHeadline">Aftale og betaling:</p>
-          <p>Når I er enige om prisen, udarbejdes en købsaftale. Betalingen kan ofte foregå med det samme, enten kontant
-            eller via bankoverførsel, afhængigt af hvad der er aftalt.</p>
+          <p>Når I er enige om prisen, udarbejdes en købsaftale. Betalingen kan foregå som aftalt med repræsentaten.</p>
           <p class="smallHeadline">Transport:</p>
-          <p>Delfin Interior arrangerer transporten af møblet. Dette kan ske med det samme eller på et senere aftalt
+          <p>Delfin Interior arrangerer transport af møblet. Dette kan ske med det samme eller på et senere aftalt
             tidspunkt.</p>
         </div>
         <div class="sellStepsContainer">
           <p class="bigHeadline">Trin 4: Forberedelse og Salg</p>
           <p class="smallHeadline">Forberedelse:</p>
-          <p>Når møblet ankommer til Delfin Interiors lager, bliver det gjort klar til salg. Dette kan inkludere
-            rengøring og andre mindre forberedelser for at sikre, at møblet præsenteres bedst muligt.</p>
-
-          <p class="smallHeadline">Kvalitetskontrol:</p>
-          <p>Møblet gennemgår en kvalitetskontrol for at sikre, at det lever op til Delfin Interiors høje
-            standarder.</p>
+          <p>Når møblet ankommer hos Delfin Interior, bliver det gjort klar til salg. Dette inkluderer
+            rengøring og andre mindre forberedelser for at sikre, at møblet fremstår i sin bedst mulige stand</p>
 
           <p class="smallHeadline">Salg:</p>
-          <p>Møblet bliver derefter fotograferet og lagt op til salg på Delfin Interiors hjemmeside, sociale medier og i
-            deres fysiske butik. Her vil det finde sin nye ejer, som kan glæde sig over et unikt møbel.</p>
+          <p>Møblet bliver derefter fotograferet og lagt op til salg på Delfin Interiors hjemmeside og sociale medier.
+            Her vil det finde sin nye ejer, som kan glæde sig over et unikt møbel.</p>
         </div>
         <div class="sellStepsContainer">
-          <p class="bigHeadline">Fordele ved at sælge til Delfin Interior</p>
-          <p class="smallHeadline">Nem proces: </p>
-          <p>Delfin Interior tager sig af alt fra inspektion til transport og istandsættelse.</p>
+          <!--          <p class="bigHeadline">Fordele ved at sælge til Delfin Interior</p>
+                    <p class="smallHeadline">Nem proces: </p>
+                    <p>Delfin Interior tager sig af alt fra inspektion til transport og salg.</p>
 
-          <p class="smallHeadline">Professionel vurdering: </p>
-          <p>Få en retfærdig vurdering af dit møbel baseret på ekspertviden.</p>
+                    <p class="smallHeadline">Professionel vurdering: </p>
+                    <p>Få en retfærdig vurdering af dit møbel baseret på ekspertviden.</p>
 
-          <p class="smallHeadline">Bæredygtighed: </p>
-          <p>Ved at sælge og købe brugte møbler bidrager du til en mere bæredygtig livsstil.</p>
+                    <p class="smallHeadline">Bæredygtighed: </p>
+                    <p>Ved at sælge og købe brugte møbler bidrager du til en mere bæredygtig livsstil.</p>
 
-          <p class="smallHeadline">Kvalitetsbehandling:</p>
-          <p>Ved at vælge Delfin Interior sikrer du, at dine brugte møbler får den bedst mulige
-            behandling og en ny chance for at blive værdsat i et andet hjem.</p>
+                    <p class="smallHeadline">Kvalitetsbehandling:</p>
+                    <p>Ved at vælge Delfin Interior sikrer du, at dine brugte møbler får den bedst mulige
+                      behandling og en ny chance for at blive værdsat i et andet hjem.</p>-->
         </div>
       </div>
     </div>
@@ -121,13 +115,13 @@
       }
 
       .smallHeadline {
-        font-size: $fontSize20;
+        font-size: $fontSize16;
         font-weight: 800;
         margin-top: 1rem;
       }
 
-      p{
-        font-size: $fontSize20;
+      p {
+        font-size: $fontSize16;
       }
     }
   }
@@ -135,7 +129,7 @@
 
 .sellInfoContainer {
   color: $fontColorWhite;
-  font-size: $fontSize20;
+  font-size: $fontSize16;
   margin: 2rem 0 1rem 0;
   width: 100%;
   position: relative;
@@ -191,7 +185,7 @@
         }
 
         .smallHeadline {
-          font-size: $fontSize20;
+          font-size: $fontSize16;
           font-weight: 800;
           margin-top: 1rem;
         }
@@ -200,7 +194,7 @@
 
     .sellInfoContainer {
       color: $fontColorWhite;
-      font-size: $fontSize20;
+      font-size: $fontSize16;
       margin: 3rem 0 1rem 0;
       width: 100%;
       position: relative;
@@ -224,7 +218,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        min-width: 550px;
+        min-width: 700px;
 
         .infoTextContainerHelper {
           line-height: 2rem;
@@ -235,9 +229,19 @@
             margin-bottom: 0.5rem;
           }
 
+          .test {
+            font-size: $fontSize16;
+          }
+
           .centerAlignedInfo {
             text-align: center;
             margin: 1rem 0;
+            display: flex;
+            justify-content: space-evenly;
+
+            .criteraContainer {
+              text-align: left;
+            }
 
             .contactInfoContainer {
               margin: 2rem 0;
