@@ -7,7 +7,7 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
 
 <template>
   <div class="homeFrontImageContainer">
-    <img src="../assets/images/forsidebillede.jpg" alt="">
+    <img src="../assets/images/forsideImg3.jpg" alt="">
     <div class="homeBannerTextContainer">
       <div class="bannerTextLeft">
         <h1>Delfin Interior</h1>
@@ -58,6 +58,7 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
     .bannerTextLeft {
       display: flex;
       flex-direction: column;
+      text-align: center;
       height: 100%;
 
       h1 {
@@ -72,8 +73,6 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
 
       .linkBannerText {
         margin-top: auto;
-        align-self: flex-end;
-
         .smallText {
           display: block;
           white-space: nowrap;
@@ -95,6 +94,7 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
           }
           img{
             position: relative;
+            width: 20px;
           }
           &:hover{
             .bannerLinkArrow{
@@ -113,6 +113,7 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
       width: 858px;
 
       .bannerTextLeft {
+        text-align: center;
         h1 {
           font-size: $bigHeadlineFont;
         }
@@ -123,7 +124,6 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
 
         .linkBannerText {
           margin-top: auto;
-          align-self: flex-end;
           font-style: normal;
 
           .smallText {

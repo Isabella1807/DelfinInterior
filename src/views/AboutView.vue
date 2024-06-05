@@ -15,26 +15,23 @@
           <p class="ceoImageText">Delfin De Nully, CEO</p>
         </div>
         <div class="aboutText">
-          <p class="textHeadline">Manden bag Delfin Interior</p>
+          <p class="textHeadline">Om Delfin Interiør</p>
+          <p class="textBlock">Velkommen til Delfin Interiør, hvor vi kombinerer passion for design med bæredygtighed og gode priser. Vi specialiserer os i salg af brugte designermøbler, der bringer stil og kvalitet ind i dit hjem uden at sprænge budgettet.</p>
 
-          <p class="textBlock">Historien bag vores brand begyndte med min passion for æstetik og design, og et ønske om at bringe
-            enestående
-            møbelkreationer ind i folks hjem. Fra de tidlige dage, hvor jeg besøgte loppemarkeder og auktioner i jagten
-            på
-            skjulte perler, voksede min fascination for designermøbler og deres historie.</p>
+          <p class="textsubheadline">Vores Historie</p>
+          <p class="textBlock">Delfin Interiør er et nyt og spændende startup grundlagt af Lars Bertrand de Nully. Med en baggrund som grundlægger af Acubiz, har Lars bragt sin iværksætterånd og erfaring ind i verden af interiørdesign. Virksomheden blev etableret med en vision om, at gøre designermøbler tilgængelige for flere, samtidig med at vi bidrager til en mere bæredygtig fremtid.</p>
 
-          <p class="textBlock">Efter utallige timer med omhyggelig kuratering og genoplivning af møbelhistorie, blev visionen om Delfin
-            Interior en realitet. Med en dybfølt tro på vigtigheden af kvalitet og æstetik, stræber jeg efter at tilbyde
-            vores kunder nøje udvalgte møbler, der både beriger deres hjem og fortæller en historie.</p>
+          <p class="textsubheadline">Vores Mission</p>
+          <p class="textBlock">Vores mission er at give vores kunder adgang til smukke og funktionelle designer møbler til overkommelige priser. Vi tror på, at det er muligt at indrette med stil uden at gå på kompromis med kvalitet eller økonomi.</p>
 
-          <p class="textBlock">Delfin Interior repræsenterer ikke blot en virksomhed, men en passion for at dele min kærlighed til
-            designermøbler med verden. Det er mit mål at give vores kunder en unik oplevelse af luksus og stil til
-            overkommelige priser, samtidig med at jeg fastholder respekten for møblernes unikke karakter og
-            historie.</p>
+          <p class="textsubheadline">Vores Værdier</p>
+          <p class="textBlock"><strong>Kvalitet:</strong> Vi udvælger omhyggeligt vores sortiment af brugte designermøbler for at sikre, at hvert stykke lever op til høje standarder for både æstetik og holdbarhed.</p>
+          <p class="textBlock"><strong>Bæredygtighed:</strong> Ved at give brugte møbler nyt liv bidrager vi til reduktion af affald og fremmer en cirkulær økonomi.</p>
+          <p class="textBlock"><strong>Tilgængelighed:</strong> Vi ønsker, at alle skal have mulighed for at nyde godt af smukt design, uanset budget.</p>
+          <p class="textBlock"><strong>Kundecentreret:</strong> Vores kunders tilfredshed er vores højeste prioritet. Vi lytter nøje til dine ønsker og behov for at finde de perfekte løsninger til dig og dit hjem.</p>
 
-          <p class="textBlock">Jeg er begejstret for at byde dig velkommen til vores online platform og ser frem til at dele denne rejse
-            med
-            dig, mens vi fortsætter med at udforske verdenen af tidløst design og skønhed sammen.</p>
+          <p class="textsubheadline">Kontakt Os</p>
+          <p class="textBlock">Er du klar til at indrette dit hjem med smukke, brugte designermøbler? Kontakt os i dag for at høre mere om vores udvalg og hvordan vi kan hjælpe dig med at finde de perfekte møbler til dit hjem.</p>
         </div>
       </div>
     </div>
@@ -88,6 +85,9 @@
       line-height: 2rem;
 
       .textHeadline{
+        font-size: $fontSize24;
+      }
+      .textsubheadline{
         font-size: $fontSize20;
       }
 
