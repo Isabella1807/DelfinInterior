@@ -47,8 +47,11 @@ const selectCategory = (category) => {
     display: inline-block;
   }
   .categories{
+    margin-bottom: 5px;
     &.selectedCategory{
-      font-weight: bold;
+      border-bottom: 2px solid #707070;
+      display: inline-block;
+      box-sizing: border-box;
     }
     &:hover{
       cursor:pointer;

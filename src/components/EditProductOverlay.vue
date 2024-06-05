@@ -30,13 +30,21 @@ const product = ref({
   id: existingProduct.value?.id ?? null
 })
 
+const modalTitle = computed(()=> {
+  if (existingProduct.value) {
+    return 'Rediger produkt'
+  }
+
+  return 'Tilføj nyt produkt'
+})
+
 </script>
 
 <template>
   <div class="adminEditInfoOverlayContainer">
-    <div class="globalContentWidth">
+    <div class="globalContentWidth editContainerWrapper">
       <div class="AdminEditContainer">
-        <p class="editOverlayHeader">Rediger produkt</p>
+        <p class="editOverlayHeader">{{modalTitle}}</p>
         <div class="inputContainer">
           <label for="title">Produkt navn</label>
           <input class="inputToEdit" name="title" id="title" type="text" placeholder="produkt navn"
@@ -82,68 +90,75 @@ const product = ref({
 
 <style scoped lang="scss">
 .adminEditInfoOverlayContainer {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
   z-index: 9;
+  padding: 10rem 0 3rem 0;
   background-color: rgba(#000000, 0.5);
 
-  .AdminEditContainer {
-    background-color: #FFFFFF;
-    padding: 50px;
+  .editContainerWrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
 
-    .editOverlayHeader {
-      font-size: $fontSize24;
-      margin-bottom: 20px;
-      color: $fontColorBlack;
-    }
+    .AdminEditContainer {
+      background-color: #FFFFFF;
+      padding: 50px;
+      max-height: 100%;
+      overflow-y: auto;
+      margin: auto;
 
-    .inputContainer {
-      width: 100%;
-      margin-bottom: 20px;
+      .editOverlayHeader {
+        font-size: $fontSize24;
+        margin-bottom: 20px;
+        color: $fontColorBlack;
+      }
 
-      .inputToEdit {
-        font-size: $fontSize14;
-        border: 1px solid $fontColorBlack;
-        padding: 10px;
+      .inputContainer {
         width: 100%;
+        margin-bottom: 20px;
 
-        &:focus {
-          outline: none;
+        .inputToEdit {
+          font-size: $fontSize14;
           border: 1px solid $fontColorBlack;
-          background-color: #ededed;
-          color: black;
+          padding: 10px;
+          width: 100%;
 
-        }
-      }
-    }
+          &:focus {
+            outline: none;
+            border: 1px solid $fontColorBlack;
+            background-color: #ededed;
+            color: black;
 
-    .buttonsContainer {
-      display: flex;
-      justify-content: space-between;
-
-      #save {
-        background-color: #a4b2a1;
-        color: white;
-        border: #a4b2a1;
-
-        &:hover {
-          background-color: #738272;
+          }
         }
       }
 
-      .button {
-        border: 1px solid $fontColorBlack;
-        padding: 10px 40px;
+      .buttonsContainer {
+        display: flex;
+        justify-content: space-between;
 
-        &:hover {
-          background-color: dimgray;
+        #save {
+          background-color: #a4b2a1;
           color: white;
-          cursor: pointer;
+          border: #a4b2a1;
+
+          &:hover {
+            background-color: #738272;
+          }
+        }
+
+        .button {
+          border: 1px solid $fontColorBlack;
+          padding: 10px 40px;
+
+          &:hover {
+            background-color: dimgray;
+            color: white;
+            cursor: pointer;
+          }
         }
       }
     }

@@ -35,6 +35,7 @@ const selectedCategory = computed(() => {
 
 .shopContentContainer {
   color: $fontColorBlack;
+  margin-bottom: 50px;
 
   .lowerShopContainer {
     display: flex;

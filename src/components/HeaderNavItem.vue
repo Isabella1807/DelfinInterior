@@ -3,7 +3,7 @@ const props = defineProps({to: String, title: String});
 </script>
 
 <template>
-  <router-link :to="props.to">
+  <router-link :to="props.to" class="routerLink" active-class="active">
     <div class="burgerNavClickArea">
       <p>
         {{ props.title }}
@@ -13,17 +13,27 @@ const props = defineProps({to: String, title: String});
 </template>
 
 <style scoped lang="scss">
-
+.routerLink{
+  &.active{
+    .burgerNavClickArea{
+      border-bottom: 2px solid white;
+      margin-top: 2px;
+    }
+  }
+}
 .burgerNavClickArea {
   display: flex;
   align-items: center;
   background-color: #606c5f;
-  height: 2.8rem;
   margin-bottom: 0.6rem;
   padding: 0.6rem;
+  box-sizing: border-box;
+  position: relative;
 
-  &:hover {
+  &:hover{
     cursor: pointer;
+    border-bottom: 2px solid white;
+    margin-top: 2px;
   }
 
   @include md {

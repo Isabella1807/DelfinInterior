@@ -7,7 +7,7 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
 
 <template>
   <div class="homeFrontImageContainer">
-    <img src="../assets/images/homeImage.jpg" alt="">
+    <img src="../assets/images/forsidebillede.jpg" alt="">
     <div class="homeBannerTextContainer">
       <div class="bannerTextLeft">
         <h1>Delfin Interior</h1>
@@ -41,7 +41,7 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
     height: 60vh;
 
     @include md {
-      height: 80vh;
+      height: 65vh;
     }
   }
 
@@ -51,7 +51,7 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 1.8rem;
-    background-color: rgba(115, 130, 114, 57%);
+    background-color: rgba(115, 130, 114, 85%);
     height: 250px;
     width: 400px;
 
@@ -73,7 +73,6 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
       .linkBannerText {
         margin-top: auto;
         align-self: flex-end;
-        font-style: italic;
 
         .smallText {
           display: block;
@@ -93,6 +92,14 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
           .bannerLinkArrow {
             height: 0.8rem;
             object-fit: contain;
+          }
+          img{
+            position: relative;
+          }
+          &:hover{
+            .bannerLinkArrow{
+              left: 7px;
+            }
           }
         }
       }
@@ -137,7 +144,6 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
           }
 
           &:hover{
-            font-style: italic;
             cursor: pointer;
           }
         }
