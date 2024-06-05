@@ -10,9 +10,9 @@
       <div class="aboutContainer">
         <div class="aboutCEO">
           <div class="CeoImgContainer">
-            <img src="@/assets/images/guy.png" alt="Delfin De Nully CEO">
+            <img src="@/assets/images/CEO.png" alt="Delfin Interior CEO">
           </div>
-          <p class="ceoImageText">Delfin De Nully, CEO</p>
+          <p class="ceoImageText">Lars Bertrand de Nully, CEO</p>
         </div>
         <div class="aboutText">
           <p class="textHeadline">Om Delfin Interiør</p>
