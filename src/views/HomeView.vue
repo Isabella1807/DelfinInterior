@@ -7,7 +7,7 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
 
 <template>
   <div class="homeFrontImageContainer">
-    <img src="../assets/images/forsideImg3.jpg" alt="">
+    <img src="../assets/images/forsideImg3.jpg" alt="Forside billede af en sommerstol">
     <div class="homeBannerTextContainer">
       <div class="bannerTextLeft">
         <h1>Delfin Interior</h1>
