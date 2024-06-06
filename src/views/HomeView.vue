@@ -11,11 +11,11 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
     <div class="homeBannerTextContainer">
       <div class="bannerTextLeft">
         <h1>Delfin Interior</h1>
-        <h2>Køb og salg af designer-møbler</h2>
+        <h2>Køb og salg af designermøbler</h2>
         <div class="linkBannerText">
           <router-link to="/shop">
             <div class="LinkContainer">
-              <h2 class="bigText">Se udvalget af brugte designer møbler her</h2>
+              <h2 class="bigText">Se udvalget af brugte designermøbler her</h2>
               <h2 class="smallText">Se vores udvalg her</h2>
               <img src="@/assets/icons/arrow.png" alt="Til shoppen" class="bannerLinkArrow">
             </div>
