@@ -7,15 +7,15 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
 
 <template>
   <div class="homeFrontImageContainer">
-    <img src="../assets/images/forsidebillede.jpg" alt="">
+    <img src="../assets/images/forsideImg3.jpg" alt="Forside billede af en sommerstol">
     <div class="homeBannerTextContainer">
       <div class="bannerTextLeft">
         <h1>Delfin Interior</h1>
-        <h2>Køb og salg af designer-møbler</h2>
+        <h2>Køb og salg af designermøbler</h2>
         <div class="linkBannerText">
           <router-link to="/shop">
             <div class="LinkContainer">
-              <h2 class="bigText">Se udvalget af brugte designer møbler her</h2>
+              <h2 class="bigText">Se udvalget af brugte designermøbler her</h2>
               <h2 class="smallText">Se vores udvalg her</h2>
               <img src="@/assets/icons/arrow.png" alt="Til shoppen" class="bannerLinkArrow">
             </div>
@@ -58,6 +58,7 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
     .bannerTextLeft {
       display: flex;
       flex-direction: column;
+      text-align: center;
       height: 100%;
 
       h1 {
@@ -72,8 +73,6 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
 
       .linkBannerText {
         margin-top: auto;
-        align-self: flex-end;
-
         .smallText {
           display: block;
           white-space: nowrap;
@@ -95,6 +94,7 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
           }
           img{
             position: relative;
+            width: 20px;
           }
           &:hover{
             .bannerLinkArrow{
@@ -113,6 +113,7 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
       width: 858px;
 
       .bannerTextLeft {
+        text-align: center;
         h1 {
           font-size: $bigHeadlineFont;
         }
@@ -123,7 +124,6 @@ import armchairPath from "@/assets/images/lænestole2.jpg";
 
         .linkBannerText {
           margin-top: auto;
-          align-self: flex-end;
           font-style: normal;
 
           .smallText {

@@ -17,7 +17,7 @@ const formattedPrice = computed(() => {
   <div class="productCardContainer">
     <router-link :to="`/product/${props.id}`">
       <div class="productImageContainer">
-        <img :src="props.imgPath" alt="" class="productImage">
+        <img :src="props.imgPath" alt="Produkt billede" class="productImage">
       </div>
     </router-link>
 
