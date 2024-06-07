@@ -2,7 +2,7 @@
 import {useStore} from "vuex"
 import {computed} from "vue";
 import Banner from "../components/shopComponents/Banner.vue"
-import homeImage from "@/assets/images/homeImage.jpg";
+import bannerImagePath from "@/assets/images/bannerImg.jpg";
 import ProductList from "@/components/shopComponents/ProductList.vue";
 import CategorySelector from "@/components/shopComponents/CategorySelector.vue";
 import ShopHeader from "@/components/shopComponents/ShopHeader.vue";
@@ -16,7 +16,7 @@ const selectedCategory = computed(() => {
 <template>
   <div class="globalContentWidth">
     <div class="shopContainer">
-      <Banner :bannerImg="homeImage" :shopCategory="selectedCategory"/>
+      <Banner :bannerImg="bannerImagePath" :shopCategory="selectedCategory"/>
       <div class="shopContentContainer">
         <ShopHeader/>
         <div class="lowerShopContainer">

@@ -6,7 +6,7 @@
     <div class="sellInfo">
       <div class="sellInfoContainer">
         <div class="sellInfoImageContainer">
-          <img src="@/assets/images/chairs.jpg" alt="billede af nogle stole">
+          <img src="@/assets/images/otherBG.jpg" alt="billede af nogle stole">
         </div>
         <div class="infoTextContainer">
           <div class="infoTextContainerHelper">

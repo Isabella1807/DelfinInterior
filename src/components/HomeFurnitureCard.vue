@@ -38,6 +38,7 @@ const props = defineProps({
   h1 {
     font-size: $fontSize30;
     color: $fontColorWhite;
+    padding: 10px 20px;
   }
 
   .cardTitle {
