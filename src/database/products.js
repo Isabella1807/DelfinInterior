@@ -1,5 +1,5 @@
 import { deleteDoc, doc, addDoc, collection, getDocs,updateDoc} from "firebase/firestore";
-import myDB from "./initFirebase.js";
+import {myDB} from "./initFirebase.js";
 
 const productsCollection = "products";
 

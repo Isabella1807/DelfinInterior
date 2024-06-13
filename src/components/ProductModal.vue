@@ -1,6 +1,9 @@
 <script setup>
 import {useStore} from "vuex"
 import {computed, ref} from "vue";
+import {useImageUpload} from "@/database/productImages.js";
+
+const {handleFileUpload, imageUrl} = useImageUpload();
 
 const store = useStore();
 const cancelEditing = () => {
@@ -8,6 +11,7 @@ const cancelEditing = () => {
 }
 
 const onSave = () => {
+  product.value.mainImage = imageUrl;
   store.dispatch('products/saveProduct', product.value);
 }
 
@@ -30,7 +34,7 @@ const product = ref({
   id: existingProduct.value?.id ?? null
 })
 
-const modalTitle = computed(()=> {
+const modalTitle = computed(() => {
   if (existingProduct.value) {
     return 'Rediger produkt'
   }
@@ -44,45 +48,53 @@ const modalTitle = computed(()=> {
   <div class="adminEditInfoOverlayContainer">
     <div class="globalContentWidth editContainerWrapper">
       <div class="AdminEditContainer">
-        <p class="editOverlayHeader">{{modalTitle}}</p>
-        <div class="inputContainer">
-          <label for="title">Produkt navn</label>
-          <input class="inputToEdit" name="title" id="title" type="text" placeholder="produkt navn"
-                 v-model="product.title">
-        </div>
-        <div class="inputContainer">
-          <label for="price">Produkt pris</label>
-          <input class="inputToEdit" name="price" id="price" type="number" placeholder="produkt pris"
-                 v-model="product.priceDKK">
-        </div>
-        <div class="inputContainer">
-          <label for="weight">Produkt vægt</label>
-          <input class="inputToEdit" name="weight" id="weight" type="number" placeholder="produkt vægt"
-                 v-model="product.weightKilo">
-        </div>
-        <div class="inputContainer">
-          <label for="category">Produkt kategori</label>
-          <input class="inputToEdit" name="category" id="category" type="text" placeholder="produkt kategori"
-                 v-model="product.category">
-        </div>
-        <div class="inputContainer">
-          <label for="material">Produkt materiale beskrivelse</label>
-          <textarea class="inputToEdit" name="material" id="material" placeholder="produkt materiale beskrivelse"
-                    v-model="product.material"/>
-        </div>
-        <div class="inputContainer">
-          <label for="description">Produkt beskrivelse</label>
-          <textarea class="inputToEdit" name="description" id="description" placeholder="produkt beskrivelsen"
-                    v-model="product.description"/>
-        </div>
-        <div class="buttonsContainer">
-          <div id="cancel" class="button" @click="cancelEditing">
-            <p>Cancel</p>
+        <form v-on:submit.prevent="">
+          <p class="editOverlayHeader">{{ modalTitle }}</p>
+          <div class="inputContainer">
+            <label for="title">Produkt navn</label>
+            <input class="inputToEdit" name="title" id="title" type="text" placeholder="produkt navn"
+                   v-model="product.title">
           </div>
-          <div id="save" class="button" @click="onSave">
-            <p>Gem</p>
+          <div class="inputContainer">
+            <label for="price">Produkt pris</label>
+            <input class="inputToEdit" name="price" id="price" type="number" placeholder="produkt pris"
+                   v-model="product.priceDKK">
           </div>
-        </div>
+          <div class="inputContainer">
+            <label for="weight">Produkt vægt</label>
+            <input class="inputToEdit" name="weight" id="weight" type="number" placeholder="produkt vægt"
+                   v-model="product.weightKilo">
+          </div>
+          <div class="inputContainer">
+            <label for="category">Produkt kategori</label>
+            <input class="inputToEdit" name="category" id="category" type="text" placeholder="produkt kategori"
+                   v-model="product.category">
+          </div>
+          <div class="inputContainer">
+            <label for="material">Produkt materiale beskrivelse</label>
+            <textarea class="inputToEdit" name="material" id="material" placeholder="produkt materiale beskrivelse"
+                      v-model="product.material"/>
+          </div>
+          <div class="inputContainer">
+            <label for="description">Produkt beskrivelse</label>
+            <textarea class="inputToEdit" name="description" id="description" placeholder="produkt beskrivelsen"
+                      v-model="product.description"/>
+          </div>
+
+          <label for="image">Upload billede</label>
+          <div class="productImageContainer" :style="`background-image: url(${imageUrl})`">
+            <input type="file" name="image" id="image" @change="handleFileUpload"/>
+          </div>
+
+          <div class="buttonsContainer">
+            <div id="cancel" class="button" @click="cancelEditing">
+              <p>Cancel</p>
+            </div>
+            <div id="save" class="button" @click="onSave">
+              <p>Gem</p>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -134,6 +146,19 @@ const modalTitle = computed(()=> {
 
           }
         }
+      }
+
+      .productImageContainer {
+        background-size: cover;
+        background-position: center center;
+        border: 1px solid $fontColorBlack;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+        max-width: 280px;
+        height: 350px;
+
       }
 
       .buttonsContainer {
