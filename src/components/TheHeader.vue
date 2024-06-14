@@ -1,18 +1,25 @@
 <script setup>
 import HeaderNavItem from "@/components/HeaderNavItem.vue";
-import {ref} from "vue";
+import {ref, computed} from "vue";
 import {useStore} from "vuex";
+import {useRouter} from 'vue-router';
 
 const store = useStore();
+const router = useRouter();
 
 let isBurgerMenuVisible = ref(false);
 
+const isAdmin = computed(() => store.getters['user/isAdmin']);
 const toggleBurgerMenu = () => {
   isBurgerMenuVisible.value = !isBurgerMenuVisible.value;
 }
 
-const test = () => {
-  store.dispatch('products/incrementCounter')
+const onClickLogout = () => {
+  store.dispatch('user/logout')
+
+  //Reroute til forsiden
+  router.push('/');
+
 };
 </script>
 
@@ -30,6 +37,7 @@ const test = () => {
           <HeaderNavItem to="/sell" title="Sælg til os"/>
           <HeaderNavItem to="/about" title="Om os"/>
           <HeaderNavItem to="/contact" title="Kontakt"/>
+          <HeaderNavItem to="/contact" title="Log ud" v-if="isAdmin" @click="onClickLogout"/>
         </div>
         <div class="navIcons">
           <img src="../assets/icons/searchIcon.png" alt="Søg">
@@ -67,9 +75,9 @@ header {
   z-index: 10;
   background-color: #738272;
   align-items: center;
-  box-shadow: 1px 4px 9px 0px rgba(0,0,0,0.31);
-  -webkit-box-shadow: 1px 4px 9px 0px rgba(0,0,0,0.31);
-  -moz-box-shadow: 1px 4px 9px 0px rgba(0,0,0,0.31);
+  box-shadow: 1px 4px 9px 0px rgba(0, 0, 0, 0.31);
+  -webkit-box-shadow: 1px 4px 9px 0px rgba(0, 0, 0, 0.31);
+  -moz-box-shadow: 1px 4px 9px 0px rgba(0, 0, 0, 0.31);
 
   .headerItemsContainer {
     display: flex;

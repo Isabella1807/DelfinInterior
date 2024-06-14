@@ -24,12 +24,12 @@ const product = ref({
   description: existingProduct.value?.description ?? '',
   material: existingProduct.value?.material ?? '',
   category: existingProduct.value?.category ?? '',
-  mainImage: existingProduct.value?.mainImage ?? 'https://source.unsplash.com/random/200x200?sig=1',
+  mainImage: existingProduct.value?.mainImage ?? 'https://picsum.photos/200/300?random=1',
   extraImages: existingProduct.value?.extraImages ?? [
-    'https://source.unsplash.com/random/200x200?sig=23',
-    'https://source.unsplash.com/random/200x200?sig=25',
-    'https://source.unsplash.com/random/200x200?sig=26',
-    'https://source.unsplash.com/random/200x200?sig=27',
+    'https://picsum.photos/200/300?random=2',
+    'https://picsum.photos/200/300?random=3',
+    'https://picsum.photos/200/300?random=4',
+    'https://picsum.photos/200/300?random=5',
   ],
   id: existingProduct.value?.id ?? null
 })
