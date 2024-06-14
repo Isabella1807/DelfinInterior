@@ -22,7 +22,7 @@ const formattedPrice = computed(() => {
     </router-link>
 
     <div class="productTextContainer">
-      <p>{{ props.title }}</p>
+      <p class="productTitle">{{ props.title }}</p>
       <div class="lowerTextContainerItems">
         <p>{{ formattedPrice }}</p>
         <router-link :to="`/product/${props.id}`">
@@ -73,10 +73,6 @@ const formattedPrice = computed(() => {
       .productReadMore{
         &:hover{
           cursor:pointer;
-
-          p{
-            font-style: italic;
-          }
         }
       }
     }

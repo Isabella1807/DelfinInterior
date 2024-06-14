@@ -1,6 +1,6 @@
 <script setup>
 import {useStore} from "vuex"
-import {computed, ref} from "vue";
+import {computed, ref, watch} from "vue";
 import {useImageUpload} from "@/database/productImages.js";
 
 const {handleFileUpload, imageUrl} = useImageUpload();
@@ -10,10 +10,30 @@ const cancelEditing = () => {
   store.dispatch('products/cancelEditingProduct');
 }
 
+const randomNumber = () => Math.floor(Math.random() * 100) + 1;
+
+
+watch(imageUrl, (newImageUrl) => {
+  product.value.mainImage = newImageUrl
+})
+
 const onSave = () => {
-  product.value.mainImage = imageUrl;
+  if (product.value.mainImage === '') {
+    product.value.mainImage = `https://picsum.photos/200/300?random=${randomNumber()}`
+  }
+
+  if (!existingProduct.value) {
+    product.value.extraImages = [
+      `https://picsum.photos/200/300?random=${randomNumber()}`,
+      `https://picsum.photos/200/300?random=${randomNumber()}`,
+      `https://picsum.photos/200/300?random=${randomNumber()}`,
+      `https://picsum.photos/200/300?random=${randomNumber()}`
+    ]
+  }
+
   store.dispatch('products/saveProduct', product.value);
 }
+
 
 const existingProduct = computed(() => store.getters["products/getEditingProduct"])
 
@@ -24,13 +44,8 @@ const product = ref({
   description: existingProduct.value?.description ?? '',
   material: existingProduct.value?.material ?? '',
   category: existingProduct.value?.category ?? '',
-  mainImage: existingProduct.value?.mainImage ?? 'https://picsum.photos/200/300?random=1',
-  extraImages: existingProduct.value?.extraImages ?? [
-    'https://picsum.photos/200/300?random=2',
-    'https://picsum.photos/200/300?random=3',
-    'https://picsum.photos/200/300?random=4',
-    'https://picsum.photos/200/300?random=5',
-  ],
+  mainImage: existingProduct.value?.mainImage ?? '',
+  extraImages: existingProduct.value?.extraImages ?? [],
   id: existingProduct.value?.id ?? null
 })
 
@@ -82,7 +97,7 @@ const modalTitle = computed(() => {
           </div>
 
           <label for="image">Upload billede</label>
-          <div class="productImageContainer" :style="`background-image: url(${imageUrl})`">
+          <div class="productImageContainer" :style="`background-image: url(${product.mainImage})`">
             <input type="file" name="image" id="image" @change="handleFileUpload"/>
           </div>
 
