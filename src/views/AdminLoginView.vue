@@ -16,7 +16,7 @@ const loginAsAdmin = async () => {
     adminName.value = '';
     adminPassword.value = '';
     errorInLogin.value = false;
-    router.push('/');
+    await router.push('/');
   } else {
     errorInLogin.value = true;
   }

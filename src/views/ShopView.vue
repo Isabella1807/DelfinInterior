@@ -43,9 +43,4 @@ const selectedCategory = computed(() => {
   }
 }
 
-/*@include md {
-  .lowerShopContainer {
-    justify-content: space-between;
-  }
-}*/
 </style>

@@ -21,7 +21,4 @@ const myDB = getFirestore(app);
 // Initialize Storage
 const storage = getStorage(app);
 
-// Reference til storage
-const storageRef = ref(storage);
-
 export {myDB, storage};

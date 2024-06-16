@@ -6,6 +6,7 @@ import {useImageUpload} from "@/database/productImages.js";
 const {handleFileUpload, imageUrl} = useImageUpload();
 
 const store = useStore();
+
 const cancelEditing = () => {
   store.dispatch('products/cancelEditingProduct');
 }
