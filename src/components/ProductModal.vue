@@ -1,7 +1,8 @@
-<script setup>
+<script setup lang="ts">
 import {useStore} from "vuex"
-import {computed, ref, watch} from "vue";
+import {computed, Ref, ref, watch} from "vue";
 import {useImageUpload} from "@/database/productImages.js";
+import {Product} from "@/Types";
 
 const {handleFileUpload, imageUrl} = useImageUpload();
 
@@ -35,10 +36,9 @@ const onSave = () => {
   store.dispatch('products/saveProduct', product.value);
 }
 
-
 const existingProduct = computed(() => store.getters["products/getEditingProduct"])
 
-const product = ref({
+const product: Ref<Product> = ref({
   title: existingProduct.value?.title ?? '',
   priceDKK: existingProduct.value?.priceDKK ?? null,
   weightKilo: existingProduct.value?.weightKilo ?? null,
@@ -57,7 +57,6 @@ const modalTitle = computed(() => {
 
   return 'Tilføj nyt produkt'
 })
-
 </script>
 
 <template>

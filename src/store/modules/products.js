@@ -45,9 +45,8 @@ const getters = {
 const actions = {
     async loadAllProducts({state, commit}) {
         console.log("all my products from actions")
-        const abe = await productDB.getAllProducts()
-        console.log(abe)
-        commit('setProducts', abe)
+        const allProducts = await productDB.getAllProducts()
+        commit('setProducts', allProducts)
     },
     setCategory({state, commit}, category) {
         commit('overwriteCategory', category)
