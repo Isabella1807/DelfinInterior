@@ -1,21 +1,21 @@
 <script setup>
 import HeaderNavItem from "@/components/HeaderNavItem.vue";
 import {ref, computed} from "vue";
-import {useStore} from "vuex";
+import {useUserStore} from "@/store/modules/userStore";
 import {useRouter} from 'vue-router';
 
-const store = useStore();
 const router = useRouter();
+const store = useUserStore();
 
 let isBurgerMenuVisible = ref(false);
 
-const isAdmin = computed(() => store.getters['user/isAdmin']);
+const isAdmin = computed(() => store.isAdmin);
 const toggleBurgerMenu = () => {
   isBurgerMenuVisible.value = !isBurgerMenuVisible.value;
 }
 
 const onClickLogout = () => {
-  store.dispatch('user/logout')
+  store.logout();
 
   //Reroute til forsiden
   router.push('/');

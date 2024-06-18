@@ -1,16 +1,16 @@
 <script setup>
 import {ref} from 'vue';
-import {useStore} from 'vuex'
+import {useUserStore} from "@/store/modules/userStore";
 import {useRouter} from 'vue-router'
 
+const store = useUserStore();
 const router = useRouter();
-const store = useStore();
 const adminName = ref('');
 const adminPassword = ref('');
 let errorInLogin = ref(false);
 
 const loginAsAdmin = async () => {
-  const success = await store.dispatch('user/login', {username: adminName.value, password: adminPassword.value})
+  const success = store.login(adminName.value, adminPassword.value);
 
   if (success) {
     adminName.value = '';
