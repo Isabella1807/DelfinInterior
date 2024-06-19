@@ -1,10 +1,12 @@
 <script setup>
 import {useStore} from "vuex"
+import {useUserStore} from "@/store/modules/userStore";
 import {computed} from "vue"
 
 const store = useStore();
+const store2 = useUserStore();
 
-const isUserAdmin = computed(() => store.getters["user/isAdmin"])
+const isUserAdmin = computed(() => store2.isAdmin);
 
 const props = defineProps({
   title: String,

@@ -1,12 +1,14 @@
 <script setup>
 import ProductCard from "@/components/shopComponents/ProductCard.vue";
 import {useStore} from 'vuex';
+import {useUserStore} from "@/store/modules/userStore";
 import {computed} from "vue";
 
 const store = useStore();
+const store2 = useUserStore();
 
 const products = computed(() => store.getters["products/getAllProductsInCategory"])
-const isUserAdmin = computed(() => store.getters["user/isAdmin"])
+const isUserAdmin = computed(() => store2.isAdmin);
 
 const openAddNewProduct = () => {
   //Null for at redigere i et produkt der ikk findes i forvejen.
