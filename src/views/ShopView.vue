@@ -1,15 +1,16 @@
 <script setup>
-import {useStore} from "vuex"
 import {computed} from "vue";
 import Banner from "../components/shopComponents/Banner.vue"
 import bannerImagePath from "@/assets/images/bannerImg.jpg";
 import ProductList from "@/components/shopComponents/ProductList.vue";
 import CategorySelector from "@/components/shopComponents/CategorySelector.vue";
 import ShopHeader from "@/components/shopComponents/ShopHeader.vue";
+import {useProductStore} from "@/store/modules/productStore";
 
-const store = useStore();
+const store = useProductStore();
+
 const selectedCategory = computed(() => {
-  return store.getters["products/getSelectedCategory"]
+  return store.getSelectedCategory
 })
 </script>
 

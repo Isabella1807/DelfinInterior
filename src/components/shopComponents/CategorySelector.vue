@@ -1,16 +1,19 @@
-<script setup>
+<script setup lang="ts">
 import {useStore} from 'vuex';
-import {computed} from 'vue';
+import {computed, onMounted, watch} from 'vue';
+import {useProductStore} from "@/store/modules/productStore";
 
 const store = useStore();
+const store2 = useProductStore();
 
-const categories = computed(() => store.getters["products/getAllCategories"])
-const selectedCategory = computed(() => store.getters["products/getSelectedCategory"])
-const selectCategory = (category) => {
+const categories = computed(() => store2.allCategories)
+
+const selectedCategory = computed(() => store2.getSelectedCategory)
+const selectCategory = (category: string) => {
   if (selectedCategory.value === category) {
-    store.dispatch("products/resetCategory")
+    store2.resetCategory();
   } else {
-    store.dispatch('products/setCategory', category)
+    store2.setCategory(category);
   }
 }
 </script>
@@ -46,15 +49,18 @@ const selectCategory = (category) => {
     margin-bottom: 0.5rem;
     display: inline-block;
   }
-  .categories{
+
+  .categories {
     margin-bottom: 5px;
-    &.selectedCategory{
+
+    &.selectedCategory {
       border-bottom: 2px solid #707070;
       display: inline-block;
       box-sizing: border-box;
     }
-    &:hover{
-      cursor:pointer;
+
+    &:hover {
+      cursor: pointer;
     }
   }
 }

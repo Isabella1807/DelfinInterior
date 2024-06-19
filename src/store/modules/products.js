@@ -1,4 +1,4 @@
-import productDB from "@/database/products.js"
+import productDB from "@/database/products.ts"
 import router from "@/router"
 
 const state = () => ({

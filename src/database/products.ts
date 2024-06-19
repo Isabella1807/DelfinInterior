@@ -1,13 +1,14 @@
 import { deleteDoc, doc, addDoc, collection, getDocs,updateDoc} from "firebase/firestore";
-import {myDB} from "./initFirebase.js";
+import {myDB} from "./initFirebase";
+import {Product} from "@/Types.js";
 
 const productsCollection = "products";
 
 /** ///////////// **/
 /** SHOW PRODUCTS **/
 /** ///////////// **/
-const getAllProducts = async () => {
-    const result = [];
+const getAllProducts = async (): Promise<Product[]> => {
+    const result: Product[] = [];
 
     await getDocs(collection(myDB, productsCollection))
         //.then & .catch tager ét paramter som er en callback funktion
@@ -17,11 +18,12 @@ const getAllProducts = async () => {
                 result.push({
                     ...product.data(),
                     id: product.id,
-                });
+                } as Product);
             });
         }).catch(() => {
             console.log("getAllProducts fejlede");
         });
+
     return result;
 }
 

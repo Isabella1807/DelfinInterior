@@ -1,6 +1,6 @@
 import {ref} from 'vue';
 import {getStorage, ref as storageRef, uploadBytes, getDownloadURL} from 'firebase/storage';
-import {storage} from "./initFirebase.js";
+import {storage} from "./initFirebase.ts";
 
 export function useImageUpload() {
     const storage = getStorage();
