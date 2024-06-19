@@ -1,24 +1,24 @@
-<script setup>
-import {useStore} from "vuex";
+<script setup lang="ts">
+import {useProductStore} from "@/store/modules/productStore";
 import {computed} from "vue";
-import { useRouter } from 'vue-router'
+import {useRouter} from 'vue-router'
 import ProductGallery from "@/components/productComponents/ProductGallery.vue";
 import ProductTitle from "@/components/productComponents/ProductTitle.vue";
 import ProductDescription from "@/components/productComponents/ProductDescription.vue";
 import ProductIcons from "@/components/productComponents/ProductIcons.vue";
 import ProductAddToBasket from "@/components/productComponents/ProductAddToBasket.vue";
+import {ComputedRef} from "vue";
 
-const store = useStore();
-const router = useRouter()
+const store = useProductStore();
+const router = useRouter();
 
 const product = computed(() => {
-  return store.getters["products/getProductById"](productId.value)
+  return store.getProductById(productId.value)
 })
 
-const productId = computed (() => {
-  return router.currentRoute.value.params.id
+const productId: ComputedRef<string> = computed(() => {
+  return router.currentRoute.value.params.id.toString()
 });
-
 </script>
 
 <template>
@@ -27,7 +27,8 @@ const productId = computed (() => {
       <ProductGallery class="ProductGallery" :mainImage="product.mainImage" :extraImages="product.extraImages"/>
       <div class="informationContainer">
         <ProductTitle class="ProductTitle" :title="product.title" :price="product.priceDKK" :id="productId"/>
-        <ProductDescription class="ProductDescription" :description="product.description" :productWeight="product.weightKilo" :material="product.material"/>
+        <ProductDescription class="ProductDescription" :description="product.description"
+                            :productWeight="product.weightKilo" :material="product.material"/>
         <ProductIcons class="ProductIcons"/>
         <ProductAddToBasket class="ProductAddToBasket"/>
       </div>

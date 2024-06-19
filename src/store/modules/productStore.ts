@@ -4,7 +4,6 @@ import {computed, ComputedRef, Ref, ref} from "vue";
 import {Product} from "@/Types.js";
 
 export const useProductStore = defineStore('products', () => {
-    const getProductById = (id: string) => products.value.find(product => product.id === id)
 
     const getSelectedCategory: ComputedRef<string> = computed(() => selectedCategory.value ? selectedCategory.value : "Alle produkter")
 
@@ -12,6 +11,9 @@ export const useProductStore = defineStore('products', () => {
 
     /** PRODUCT HANDLER**/
     const products: Ref<Product[]> = ref([]);
+
+    const getProductById = (id: string): Product | undefined => products.value.find(product => product.id === id)
+
 
     const loadAllProducts =  async () => {
         products.value = await productDB.getAllProducts();
@@ -29,12 +31,12 @@ export const useProductStore = defineStore('products', () => {
     /** CATEGORY HANDLER **/
     const selectedCategory: Ref<string> = ref('');
 
-    const allCategories: ComputedRef<string[]> = computed(() => {
+    const allCategories: ComputedRef<Set<string>> = computed(() => {
         const sortedCategories: Set<string> = new Set();
         products.value.forEach((product) => {
             sortedCategories.add(product.category)
         })
-        return Array.from(sortedCategories)
+        return sortedCategories
     })
 
     const setCategory = (newCategory: string) => {
@@ -45,5 +47,15 @@ export const useProductStore = defineStore('products', () => {
         selectedCategory.value = ''
     }
 
-    return {products, loadAllProducts, allCategories, setCategory, resetCategory, getSelectedCategory, getAllProductInCategory}
+    return {
+        products,
+        loadAllProducts,
+        allCategories,
+        setCategory,
+        resetCategory,
+        getSelectedCategory,
+        getAllProductInCategory,
+        getProductById
+    }
+
 })
