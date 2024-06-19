@@ -5,14 +5,10 @@ import {Product} from "@/Types.js";
 
 export const useProductStore = defineStore('products', () => {
 
-    const getSelectedCategory: ComputedRef<string> = computed(() => selectedCategory.value ? selectedCategory.value : "Alle produkter")
-
-
-
     /** PRODUCT HANDLER**/
     const products: Ref<Product[]> = ref([]);
 
-    const getProductById = (id: string): Product | undefined => products.value.find(product => product.id === id)
+    const getProductById = (id: Product['id']): Product | undefined => products.value.find(product => product.id === id)
 
 
     const loadAllProducts =  async () => {
@@ -28,8 +24,24 @@ export const useProductStore = defineStore('products', () => {
         })
     })
 
+    /**EDIT PRODUCT HANDLER**/
+    const isEditingProduct: Ref<boolean> = ref(false);
+    const editingProductId: Ref<null | Product['id']> = ref(null);
+
+    const startEditingProduct = (productIdInEditing: Product['id'] | null) =>{
+        isEditingProduct.value = true
+        editingProductId.value = productIdInEditing
+    }
+
+    const cancelEditingProduct = () => {
+        isEditingProduct.value = false
+        editingProductId.value = null
+    }
+
     /** CATEGORY HANDLER **/
     const selectedCategory: Ref<string> = ref('');
+
+    const getSelectedCategory: ComputedRef<string> = computed(() => selectedCategory.value ? selectedCategory.value : "Alle produkter")
 
     const allCategories: ComputedRef<Set<string>> = computed(() => {
         const sortedCategories: Set<string> = new Set();
@@ -55,7 +67,10 @@ export const useProductStore = defineStore('products', () => {
         resetCategory,
         getSelectedCategory,
         getAllProductInCategory,
-        getProductById
+        getProductById,
+        cancelEditingProduct,
+        startEditingProduct,
+        isEditingProduct
     }
 
 })

@@ -1,22 +1,27 @@
-<script setup>
+<script setup lang="ts">
 import {useStore} from "vuex"
 import {useUserStore} from "@/store/modules/userStore";
+import {useProductStore} from "@/store/modules/productStore";
 import {computed} from "vue"
+import {Product} from "@/Types.js";
 
 const store = useStore();
-const store2 = useUserStore();
+const userStore = useUserStore();
+const productStore = useProductStore();
 
-const isUserAdmin = computed(() => store2.isAdmin);
+const isUserAdmin = computed(() => userStore.isAdmin);
 
-const props = defineProps({
-  title: String,
-  price: Number,
-  id: String,
-})
+interface Props {
+  title: string,
+  price: number,
+  id: Product['id']
+}
+
+const props = defineProps<Props>()
 
 const onClickEdit = () => {
   console.log("edit");
-  store.dispatch('products/startEditingProduct', props.id);
+  productStore.startEditingProduct(props.id)
 
 }
 const onClickDelete = () => {

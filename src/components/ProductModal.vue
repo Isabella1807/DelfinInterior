@@ -3,13 +3,15 @@ import {useStore} from "vuex"
 import {computed, Ref, ref, watch} from "vue";
 import {useImageUpload} from "@/database/productImages.js";
 import {Product} from "@/Types";
+import {useProductStore} from "@/store/modules/productStore";
 
 const {handleFileUpload, imageUrl} = useImageUpload();
 
 const store = useStore();
+const store2 = useProductStore();
 
 const cancelEditing = () => {
-  store.dispatch('products/cancelEditingProduct');
+  store2.cancelEditingProduct();
 }
 
 const randomNumber = () => Math.floor(Math.random() * 100) + 1;

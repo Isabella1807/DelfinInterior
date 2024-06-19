@@ -7,7 +7,7 @@ const adminLogin = {
 }
 
 export const useUserStore = defineStore('users', () => {
-    const isAdmin: Ref<boolean> = ref(false);
+    const isAdmin: Ref<boolean> = ref(true);
 
     const login = (username: string, password: string): boolean => {
         if (adminLogin.username === username && adminLogin.password === password) {

@@ -1,20 +1,16 @@
-<script setup>
+<script setup lang="ts">
 import TheHeader from "./components/TheHeader.vue";
 import TheFooter from "./components/TheFooter.vue";
 import editOverlay from "./components/ProductModal.vue";
-import {useStore} from "vuex";
 import {useProductStore} from "@/store/modules/productStore";
-import {computed, onMounted} from "vue";
-import {useRouter} from "vue-router";
+import {computed, ComputedRef, onMounted} from "vue";
 
-const store = useStore();
-const store2 = useProductStore();
-const router = useRouter();
+const store = useProductStore();
 
-const isEditingProductState = computed(() => store.getters["products/getIsEditingProduct"])
+const isEditingProductState: ComputedRef<boolean> = computed(() => store.isEditingProduct)
 
 onMounted(() => {
-  store2.loadAllProducts();
+  store.loadAllProducts();
 })
 
 </script>
