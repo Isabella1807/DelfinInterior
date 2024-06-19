@@ -1,19 +1,17 @@
 <script setup lang="ts">
-import {useStore} from 'vuex';
 import {computed, onMounted, watch} from 'vue';
 import {useProductStore} from "@/store/modules/productStore";
 
-const store = useStore();
-const store2 = useProductStore();
+const store = useProductStore();
 
-const categories = computed(() => store2.allCategories)
+const categories = computed(() => store.allCategories)
 
-const selectedCategory = computed(() => store2.getSelectedCategory)
+const selectedCategory = computed(() => store.getSelectedCategory)
 const selectCategory = (category: string) => {
   if (selectedCategory.value === category) {
-    store2.resetCategory();
+    store.resetCategory();
   } else {
-    store2.setCategory(category);
+    store.setCategory(category);
   }
 }
 </script>

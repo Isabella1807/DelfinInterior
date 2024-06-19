@@ -2,12 +2,14 @@
 import ProductCard from "@/components/shopComponents/ProductCard.vue";
 import {useStore} from 'vuex';
 import {useUserStore} from "@/store/modules/userStore";
+import {useProductStore} from "@/store/modules/productStore";
 import {computed} from "vue";
 
 const store = useStore();
 const store2 = useUserStore();
+const store3 = useProductStore();
 
-const products = computed(() => store.getters["products/getAllProductsInCategory"])
+const products = computed(() => store3.getAllProductInCategory)
 const isUserAdmin = computed(() => store2.isAdmin);
 
 const openAddNewProduct = () => {
