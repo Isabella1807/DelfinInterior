@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import {useStore} from "vuex"
 import {useUserStore} from "@/store/modules/userStore";
 import {useProductStore} from "@/store/modules/productStore";
 import {computed} from "vue"
 import {Product} from "@/Types.js";
 
-const store = useStore();
 const userStore = useUserStore();
 const productStore = useProductStore();
 
@@ -22,11 +20,11 @@ const props = defineProps<Props>()
 const onClickEdit = () => {
   console.log("edit");
   productStore.startEditingProduct(props.id)
-
 }
+
 const onClickDelete = () => {
   if (confirm("Er du sikker på du vil slette hele produktet?")) {
-    store.dispatch('products/deleteProduct', props.id);
+    productStore.deleteProduct(props.id);
   }
 }
 </script>

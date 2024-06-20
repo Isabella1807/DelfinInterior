@@ -1,5 +1,5 @@
 import productDB from "@/database/products.ts"
-import router from "@/router"
+import router from "@/router/index.ts"
 
 const state = () => ({
     products: [],

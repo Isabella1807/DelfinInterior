@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import {useStore} from "vuex"
 import {computed, Ref, ref, watch} from "vue";
 import {useImageUpload} from "@/database/productImages.js";
 import {Product} from "@/Types";
@@ -7,11 +6,10 @@ import {useProductStore} from "@/store/modules/productStore";
 
 const {handleFileUpload, imageUrl} = useImageUpload();
 
-const store = useStore();
-const store2 = useProductStore();
+const store = useProductStore();
 
 const cancelEditing = () => {
-  store2.cancelEditingProduct();
+  store.cancelEditingProduct();
 }
 
 const randomNumber = () => Math.floor(Math.random() * 100) + 1;
@@ -35,10 +33,11 @@ const onSave = () => {
     ]
   }
 
-  store.dispatch('products/saveProduct', product.value);
+  store.saveProduct(product.value);
 }
 
-const existingProduct = computed(() => store.getters["products/getEditingProduct"])
+const existingProduct = computed(() => store.getEditingProduct)
+
 
 const product: Ref<Product> = ref({
   title: existingProduct.value?.title ?? '',
