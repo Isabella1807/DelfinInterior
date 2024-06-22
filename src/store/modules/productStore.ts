@@ -9,7 +9,9 @@ export const useProductStore = defineStore('products', () => {
     /** PRODUCT HANDLER**/
     const products: Ref<Product[]> = ref([]);
 
-    const getProductById = (id: Product['id']): Product | undefined => products.value.find(product => product.id === id)
+    const getProductById = (id: Product['id']): Product | undefined =>
+        products.value.find(product => product.id === id)
+
 
     const loadAllProducts = async () => {
         products.value = await productDB.getAllProducts();
@@ -26,8 +28,8 @@ export const useProductStore = defineStore('products', () => {
 
     /**SAVE PRODUCT HANDLER**/
     const saveProduct = async (newProductInfo: Product) => {
-        if (newProductInfo.id === null) {
-            await productDB.addNewProduct(newProductInfo).then((newId: string | null) => {
+        if (newProductInfo.id === '') {
+            await productDB.addNewProduct(newProductInfo).then((newId: Product["id"] | null) => {
                 if (!newId) return
 
                 products.value.push({
@@ -75,7 +77,6 @@ export const useProductStore = defineStore('products', () => {
         editingProductId.value = null
     }
 
-
     /** CATEGORY HANDLER **/
     const selectedCategory: Ref<string> = ref('');
 
@@ -113,5 +114,4 @@ export const useProductStore = defineStore('products', () => {
         deleteProduct,
         saveProduct
     }
-
 })

@@ -41,14 +41,14 @@ const existingProduct = computed(() => store.getEditingProduct)
 
 const product: Ref<Product> = ref({
   title: existingProduct.value?.title ?? '',
-  priceDKK: existingProduct.value?.priceDKK ?? null,
-  weightKilo: existingProduct.value?.weightKilo ?? null,
+  priceDKK: existingProduct.value?.priceDKK ?? 0,
+  weightKilo: existingProduct.value?.weightKilo ?? 0,
   description: existingProduct.value?.description ?? '',
   material: existingProduct.value?.material ?? '',
   category: existingProduct.value?.category ?? '',
   mainImage: existingProduct.value?.mainImage ?? '',
   extraImages: existingProduct.value?.extraImages ?? [],
-  id: existingProduct.value?.id ?? null
+  id: existingProduct.value?.id ?? ''
 })
 
 const modalTitle = computed(() => {

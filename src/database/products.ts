@@ -30,7 +30,7 @@ const getAllProducts = async (): Promise<Product[]> => {
 /** //////////// **/
 /** ADD PRODUCTS **/
 /** //////////// **/
-const addNewProduct = async ({title, priceDKK, description, weightKilo, category, mainImage, extraImages}: Product): Promise<string | null> => {
+const addNewProduct = async ({title, priceDKK, description, weightKilo, category, mainImage, extraImages}: Product): Promise<Product['id'] | null> => {
 
     const result = await addDoc(collection(myDB, productsCollection), {
         title,
