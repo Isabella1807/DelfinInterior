@@ -27,7 +27,9 @@ export const useProductStore = defineStore('products', () => {
     /**SAVE PRODUCT HANDLER**/
     const saveProduct = async (newProductInfo: Product) => {
         if (newProductInfo.id === null) {
-            await productDB.addNewProduct(newProductInfo).then((newId: string) => {
+            await productDB.addNewProduct(newProductInfo).then((newId: string | null) => {
+                if (!newId) return
+
                 products.value.push({
                     ...newProductInfo,
                     id: newId

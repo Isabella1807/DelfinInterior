@@ -30,7 +30,7 @@ const getAllProducts = async (): Promise<Product[]> => {
 /** //////////// **/
 /** ADD PRODUCTS **/
 /** //////////// **/
-const addNewProduct = async ({title, priceDKK, description, weightKilo, category, mainImage, extraImages}) => {
+const addNewProduct = async ({title, priceDKK, description, weightKilo, category, mainImage, extraImages}: Product): Promise<string | null> => {
 
     const result = await addDoc(collection(myDB, productsCollection), {
         title,
@@ -40,23 +40,28 @@ const addNewProduct = async ({title, priceDKK, description, weightKilo, category
         category,
         mainImage,
         extraImages
-    }).catch((e) => {
-        console.error("Error adding document: ", e);
+    }).catch((error) => {
+        console.error("Error adding document: ", error);
     });
+
+    if (!result){
+        return null
+    }
+
     return result.id;
 }
 
 /** ///////////// **/
 /** EDIT PRODUCTS **/
 /** ///////////// **/
-const editProduct = async (productId, changedObject) => {
+const editProduct = async (productId: Product["id"], changedObject: Partial<Product>) => {
     await updateDoc(doc(myDB, productsCollection, productId), changedObject)
 }
 
 /** /////////////// **/
 /** DELETE PRODUCTS **/
 /** /////////////// **/
-const deleteProduct = async (productId) => {
+const deleteProduct = async (productId: Product["id"]) => {
     await deleteDoc(doc(myDB, productsCollection, productId))
 }
 
